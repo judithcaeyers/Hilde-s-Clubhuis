@@ -1,331 +1,228 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>DRS Classics – Detailing, Restoring, Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root {
-      --drs-blauw: #0c203d;
-      --drs-goud: #e8d282;
-      --drs-wit: #ffffff;
-      --fade-duration: 0.75s;
-      --fade-ease: ease;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background-color: var(--drs-blauw);
-      color: var(--drs-wit);
-      font-family: "Along Serif", serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 960px;
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 180px;
-      width: 45%;
-      height: auto;
-      margin: 0 auto 0.8rem;
-      display: block;
-      cursor: pointer;
-    }
-
-    .tagline {
-      margin: 0 0 1.6rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--drs-goud);
-      opacity: 1;
-      transition: opacity 0.5s ease, margin-bottom 0.5s ease;
-    }
-
-    .tagline.hidden {
-      opacity: 0;
-      margin-bottom: 0;
-    }
-
-    .mobile-break {
-      display: none;
-    }
-
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2.2rem;
-      margin-top: 2.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .keyword {
-      position: relative;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 1.05rem;
-      font-weight: 700;
-      padding-bottom: 0.25rem;
-    }
-
-    .keyword::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: 0 auto;
-      width: 0;
-      height: 1px;
-      background-color: var(--drs-goud);
-      transition: width 0.25s ease;
-    }
-
-    .keyword:hover::after,
-    .keyword.active::after {
-      width: 100%;
-    }
-
-    .panels {
-      max-width: 620px;
-      margin: 0 auto 2rem;
-      text-align: left;
-      min-height: 240px;
-      position: relative;
-    }
-
-    .panel {
-      display: none;
-      opacity: 0;
-      transition: opacity var(--fade-duration) var(--fade-ease);
-      padding: 0.5rem 0;
-      border-top: 1px solid rgba(232, 210, 130, 0.35);
-      position: absolute;
-      left: 0;
-      right: 0;
-    }
-
-    .panel.active {
-      display: block;
-      opacity: 1;
-      position: relative;
-    }
-
-    .panel-title {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.85rem;
-      color: var(--drs-goud);
-      margin-bottom: 0.4rem;
-    }
-
-    .panel p {
-      margin: 0 0 0.9rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .contact {
-      border-top: 1px solid rgba(232, 210, 130, 0.35);
-      padding-top: 1rem;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .contact h2 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--drs-goud);
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem 2rem;
-    }
-
-    .contact a {
-      color: var(--drs-wit);
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      color: var(--drs-goud);
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 1.08rem;
-      }
-
-      .mobile-break {
-        display: inline;
-      }
-
-      .keywords {
-        flex-direction: column;
-        gap: 1.8rem;
-        margin-top: 2.8rem;
-      }
-
-      .keyword {
-        font-size: 1.35rem;
-      }
-
-      .panel p {
-        font-size: 1.02rem;
-        line-height: 1.65;
-      }
-
-      .contact {
-        font-size: 1.02rem;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.4rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f8f4e9" />
+<meta name="description" content="Hilde's Clubhuis: vrij knutselen, creatieve workshops en knutselpakketjes om thuis aan de slag te gaan." />
+<title>Hilde's Clubhuis — Maak maar iets moois.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,30,1;9..144,700,30,1&display=swap" rel="stylesheet" />
+<style>
+:root{--paper:#f8f4e9;--cream:#fffaf0;--ink:#26251f;--red:#ef5842;--yellow:#f7df71;--lilac:#d9c5f4;--blue:#c5d9ed;--green:#cee6b9;--hair:rgba(38,37,31,.20);--radius:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+button,a{font:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #1949dc;outline-offset:3px}
+::selection{background:var(--yellow);color:var(--ink)}
+.container{max-width:1320px;margin:auto;padding:0 42px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.display{font-family:"Fraunces",Georgia,serif;letter-spacing:-.055em;font-weight:700}
+.star{font-size:28px;display:inline-block}
+.announcement{background:var(--green);border-bottom:1px solid var(--ink);text-align:center;padding:9px 16px;font-weight:800;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+nav{position:sticky;top:0;z-index:30;background:rgba(248,244,233,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-family:"Fraunces",Georgia,serif;font-weight:700;line-height:.84;font-size:29px;letter-spacing:-.06em;display:inline-flex;align-items:center;gap:9px;flex-shrink:0}
+.brand small{display:block;font-family:"DM Sans",sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.20em;font-weight:800;margin-top:7px}
+.brand-flower{font-family:Arial,sans-serif;color:var(--red);font-size:40px;line-height:1}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{font-size:13px;font-weight:800;transition:color .2s}
+.navlinks a:hover{color:var(--red)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:47px;border:1.5px solid var(--ink);border-radius:99px;padding:11px 22px;background:var(--ink);color:white;font-size:13px;font-weight:800;transition:transform .2s,background .2s,color .2s}
+.pill:hover{transform:translateY(-3px)}
+.pill.light{background:transparent;color:var(--ink)}
+.pill.coral{background:var(--red);color:var(--ink)}
+.menu-toggle{display:none;border:1px solid var(--ink);border-radius:99px;background:transparent;width:45px;height:45px;font-size:22px}
+.hero{overflow:hidden;border-bottom:1px solid var(--ink)}
+.hero-grid{display:grid;grid-template-columns:52% 48%;min-height:660px}
+.hero-text{padding:92px 40px 76px 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.hero-kicker .dot{width:9px;height:9px;background:var(--red);border-radius:50%}
+.hero h1{font-size:clamp(64px,6.65vw,107px);line-height:.98;margin:0 0 27px}
+.hero h1 em{font-style:italic;color:var(--red)}
+.hero p{font-size:19px;line-height:1.52;max-width:450px;margin:0 0 31px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{position:relative;min-height:625px}
+.hero-art:before{content:"";position:absolute;inset:40px -80px 55px 25px;background:var(--lilac);border-radius:51% 43% 48% 41%;transform:rotate(-9deg)}
+.photo-frame{position:absolute;z-index:2;width:65%;height:65%;left:19%;top:12%;background:#eee;border:10px solid #fff;box-shadow:9px 13px 0 var(--ink);transform:rotate(6deg);overflow:hidden}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.float-note{position:absolute;z-index:4;top:11%;right:-3%;background:var(--yellow);border:2px solid var(--ink);border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:24px;line-height:1.04;transform:rotate(13deg)}
+.float-card{position:absolute;z-index:3;bottom:10%;left:0;background:var(--red);padding:24px 29px;border:2px solid var(--ink);transform:rotate(-7deg);font-family:"Fraunces",Georgia,serif;font-size:31px;font-weight:700;line-height:1.1;box-shadow:6px 6px 0 var(--ink)}
+.hero-spark{position:absolute;z-index:3;bottom:9%;right:5%;font-size:100px;line-height:1;color:#f4cf42;transform:rotate(20deg);-webkit-text-stroke:1px var(--ink)}
+.photo-credit{position:absolute;z-index:3;bottom:14px;right:8%;font-size:10px;font-weight:800;letter-spacing:.04em}
+.ticker{background:var(--red);padding:15px 0;border-bottom:1px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker p{margin:0;text-align:center;font-weight:800;font-size:14px;letter-spacing:.11em;text-transform:uppercase}
+.section{padding:104px 0 110px;scroll-margin-top:80px}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:44px}
+.section-heading h2{font-size:clamp(48px,5vw,72px);line-height:1.03;margin:12px 0 0}
+.section-heading p{max-width:380px;font-size:17px;line-height:1.55;margin:0 0 5px}
+.label-chip{display:inline-flex;border:1px solid var(--ink);border-radius:99px;padding:7px 12px;font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:.06em}
+.open-studio{background:var(--blue);border-bottom:1px solid var(--ink)}
+.studio-split{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.studio-side h3{font-size:38px;line-height:1.12;margin:0 0 20px}
+.studio-side p{font-size:16px;line-height:1.7;margin:0 0 20px}
+.studio-perks{list-style:none;padding:0;margin:30px 0 0}
+.studio-perks li{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--hair);font-size:14px;font-weight:700}
+.perk-icon{font-size:20px}
+.date-list{border-top:1.5px solid var(--ink)}
+.date-row{display:grid;grid-template-columns:91px 1fr auto;align-items:center;gap:23px;padding:23px 0;border-bottom:1px solid var(--ink)}
+.date-tile{background:var(--cream);border:1px solid var(--ink);border-radius:13px;text-align:center;padding:10px 4px;transform:rotate(-3deg)}
+.date-tile strong{display:block;font-family:"Fraunces",Georgia,serif;font-size:35px;line-height:1}
+.date-tile span{font-size:11px;font-weight:800;letter-spacing:.1em}
+.date-copy h4{margin:0 0 6px;font-size:20px}
+.date-copy p{margin:0;color:#4e514e;font-size:13px}
+.round-arrow{border:1.5px solid var(--ink);border-radius:50%;background:var(--yellow);width:45px;height:45px;font-size:22px;transition:transform .2s}
+.round-arrow:hover{transform:rotate(-35deg)}
+.fine-print{font-size:12px;line-height:1.5;opacity:.75;margin-top:22px}
+.workshops{background:var(--paper);border-bottom:1px solid var(--ink)}
+.workshop-grid,.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.item-card{min-width:0}
+.visual{height:365px;position:relative;overflow:hidden;border:1px solid var(--ink);border-radius:15px 15px 0 0}
+.visual img{width:100%;height:100%;object-fit:cover;display:block}
+.visual .flag{position:absolute;z-index:2;top:15px;left:15px;background:var(--cream);border:1px solid var(--ink);padding:9px 13px;border-radius:30px;text-transform:uppercase;letter-spacing:.07em;font-size:10px;font-weight:800}
+.card-details{padding:23px 3px 6px}
+.card-details h3{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:29px;letter-spacing:-.045em;margin:0 0 9px;line-height:1.12}
+.card-details p{font-size:14px;line-height:1.65;margin:0 0 13px;color:#4f4d48;min-height:70px}
+.benefit{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:800;margin:3px 0 20px}
+.card-link{display:inline-block;border-bottom:1.5px solid var(--ink);padding-bottom:4px;font-size:13px;font-weight:800;background:none;border-top:none;border-left:none;border-right:none}
+.card-link:hover{color:var(--red);border-color:var(--red)}
+.img-tanchen{background:#e9e9e7}
+.img-tanchen img{object-fit:cover}
+.card-art{height:100%;width:100%;display:grid;place-items:center}
+.paper-art{background:#e5cbea;position:relative}
+.paper-art:before{content:"";position:absolute;width:59%;height:70%;background:#fff9e8;transform:rotate(-12deg);box-shadow:12px 12px 0 #c09cd9;border:1px solid var(--ink)}
+.paper-art:after{content:"✿\A  for you";white-space:pre;position:relative;z-index:2;font-family:"Fraunces",Georgia,serif;font-size:45px;text-align:center;line-height:1.4;color:#e36a55;transform:rotate(-12deg)}
+.lino-art{background:#e6ad8a;position:relative}
+.lino-art:before{content:"";position:absolute;width:63%;height:65%;background:#ffe7bb;border:12px solid #343c38;transform:rotate(9deg);box-shadow:14px 15px 0 #bd7a57}
+.lino-art:after{content:"❋";position:relative;color:#235f50;font-size:180px;line-height:1;transform:rotate(-12deg)}
+.mid-banner{background:var(--yellow);padding:35px 0;border-bottom:1px solid var(--ink);text-align:center}
+.mid-banner p{font-family:"Fraunces",Georgia,serif;font-size:clamp(25px,3vw,39px);letter-spacing:-.04em;margin:0}
+.shop{background:var(--green);border-bottom:1px solid var(--ink)}
+.product-visual{height:340px;border-radius:15px;position:relative;overflow:hidden;border:1px solid var(--ink);display:grid;place-items:center}
+.product-visual .flag{position:absolute;top:14px;left:14px;background:var(--cream);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;border-radius:30px;border:1px solid var(--ink);z-index:2}
+.kit-graphic{position:relative;width:190px;height:222px;border:2px solid var(--ink);background:var(--cream);border-radius:8px;transform:rotate(-7deg);box-shadow:12px 14px 0 rgba(38,37,31,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px}
+.kit-graphic:before{content:"HILDE'S CLUBHUIS";font-size:9px;letter-spacing:.12em;font-weight:800;position:absolute;top:21px}
+.kit-graphic b{font-family:"Fraunces",Georgia,serif;text-align:center;font-size:31px;line-height:1.04;letter-spacing:-.05em}
+.kit-graphic .graphic-symbol{font-size:57px;line-height:1}
+.kit-graphic:after{content:"DIY KIT • MET LIEFDE";font-size:9px;letter-spacing:.12em;font-weight:800;position:absolute;bottom:20px}
+.kit-card{background:#d9c8ee}
+.kit-key{background:#ffe0a0}
+.kit-lino{background:#c6d9f1}
+.shop .card-details p{min-height:53px}
+.shop .card-details .eyebrow{font-size:10px;letter-spacing:.10em;margin-bottom:10px}
+.shop-note{font-size:12px;opacity:.75;margin-top:26px}
+.about{background:var(--paper);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:70px;align-items:center}
+.about-art{height:470px;background:var(--lilac);border-radius:46% 54% 46% 51%;display:flex;align-items:center;justify-content:center;position:relative}
+.about-art .poster{width:64%;min-height:65%;background:var(--yellow);border:2px solid var(--ink);transform:rotate(-8deg);box-shadow:11px 11px 0 var(--red);display:flex;align-items:center;justify-content:center;padding:25px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:50px;font-weight:700;line-height:1;letter-spacing:-.07em}
+.about-art .stamp{position:absolute;right:0;top:15px;background:var(--red);border:2px solid var(--ink);border-radius:50%;height:120px;width:120px;display:grid;place-items:center;font-weight:800;text-align:center;font-size:13px;transform:rotate(12deg)}
+.about-copy h2{font-size:clamp(45px,5vw,75px);line-height:1.04;margin:12px 0 25px}
+.about-copy p{font-size:18px;line-height:1.65;max-width:515px}
+.about-copy .pill{margin-top:16px}
+footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-bottom:78px}
+.footer-big{font-family:"Fraunces",Georgia,serif;font-size:clamp(40px,5vw,70px);line-height:1.03;letter-spacing:-.05em;margin:0}
+.footer-side{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:16px}
+.footer-side p{font-size:16px;max-width:320px;line-height:1.5;margin:0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:22px;display:flex;justify-content:space-between;gap:25px;font-size:11px;opacity:.8;line-height:1.6}
+.footer-bottom a{text-decoration:underline}
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(22,22,19,.58);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-content{max-width:530px;width:100%;max-height:90vh;overflow:auto;background:var(--paper);border:2px solid var(--ink);border-radius:19px;box-shadow:12px 12px 0 var(--red);padding:38px 35px;position:relative}
+.modal-content h2{font-family:"Fraunces",Georgia,serif;font-size:43px;line-height:1.08;letter-spacing:-.05em;margin:15px 0}
+.modal-content p{line-height:1.6;margin:0 0 14px}
+.modal-content ul{line-height:1.85;padding-left:21px}
+.modal-close{position:absolute;top:15px;right:15px;border:1.5px solid var(--ink);background:var(--yellow);border-radius:50%;width:36px;height:36px;font-size:22px}
+.modal-note{background:var(--yellow);padding:15px;border-radius:10px;font-size:13px;margin-top:24px;font-weight:700}
+@media(max-width:1050px){.container{padding:0 27px}.hero-grid{grid-template-columns:53% 47%}.hero h1{font-size:clamp(59px,7vw,80px)}.hero-art{min-height:570px}.studio-split{gap:35px}.visual{height:305px}.product-visual{height:300px}.about-grid{gap:35px}}
+@media(max-width:760px){.container{padding:0 20px}.announcement{font-size:9px;padding:9px 8px}.nav-inner{height:70px}.brand{font-size:24px}.brand-flower{font-size:30px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);padding:24px 20px;border-bottom:1px solid var(--ink);flex-direction:column;align-items:stretch;gap:20px}.navlinks.open{display:flex}.navlinks .pill{align-self:flex-start}.hero-grid{display:flex;flex-direction:column;min-height:auto}.hero-text{padding:62px 0 30px}.hero h1{font-size:clamp(60px,14vw,90px)}.hero p{font-size:17px}.hero-art{min-height:460px;margin:0 -12px}.hero-art:before{inset:30px 0 30px 20px}.photo-frame{left:18%;top:9%;width:66%;height:68%}.float-note{right:0;top:6%;width:105px;height:105px;font-size:17px}.float-card{left:3%;bottom:9%;padding:17px;font-size:25px}.hero-spark{right:1%;font-size:65px}.photo-credit{right:4%;bottom:8px;font-size:9px}.ticker p{font-size:10px}.section{padding:74px 0 76px}.section-heading{display:block;margin-bottom:32px}.section-heading h2{font-size:clamp(49px,10vw,68px);margin-bottom:19px}.section-heading p{font-size:16px}.studio-split,.about-grid{grid-template-columns:1fr;gap:35px}.studio-side h3{font-size:31px}.studio-perks{margin-top:20px}.date-row{grid-template-columns:75px 1fr auto;gap:15px;padding:18px 0}.date-tile strong{font-size:29px}.date-copy h4{font-size:17px}.date-copy p{font-size:12px}.round-arrow{width:38px;height:38px}.workshop-grid,.shop-grid{grid-template-columns:1fr;gap:38px}.visual{height:360px}.product-visual{height:330px}.card-details p,.shop .card-details p{min-height:auto}.mid-banner p{font-size:26px}.about-art{height:390px;order:2}.about-copy{order:1}.about-art .poster{font-size:42px}.footer-grid{grid-template-columns:1fr;gap:26px;margin-bottom:55px}.footer-side{align-items:flex-start}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:10px}}
+@media(max-width:400px){.hero h1{font-size:57px}.hero-art{min-height:390px}.photo-frame{height:65%;}.visual{height:310px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
 </head>
-
 <body>
-  <div class="page">
-    <img class="logo" id="logo" src="Images/DRS-logo.png" alt="DRS Classics">
-
-    <p class="tagline" id="tagline">
-      Afwerking die je voelt,<span class="mobile-break"><br></span> niet alleen ziet.
-    </p>
-
-    <div class="keywords" id="keywords">
-      <span class="keyword" data-target="detailing">Detailing</span>
-      <span class="keyword" data-target="restoring">Restoring</span>
-      <span class="keyword" data-target="service">Service</span>
-    </div>
-
-    <div class="panels">
-      <div class="panel" id="panel-detailing">
-        <div class="panel-title">Detailing</div>
-        <p><strong>Stilte. Aandacht. Pure afwerking.</strong></p>
-        <p>Detailing bij DRS Classics is geen behandeling, maar een ritueel. We werken niet sneller — we werken dieper. Elke lijn, elke glans, elk oppervlak krijgt de tijd om terug te ademen.</p>
-        <p>Met verfijnde technieken herstellen we de helderheid van de lak, verzachten we imperfecties en brengen we een beschermende glanslaag aan die maandenlang blijft spreken.</p>
-        <p>Het interieur wordt zorgvuldig ontdaan van stof, sporen en vermoeidheid, tot het opnieuw warm en uitnodigend voelt.</p>
-        <p>Alles gebeurt in een rustige, gecontroleerde omgeving. Geen haast. Geen afleiding. Alleen aandacht voor jouw wagen.</p>
-      </div>
-
-      <div class="panel" id="panel-restoring">
-        <div class="panel-title">Restoring</div>
-        <p><strong>Het oorspronkelijke karakter, met zorg herontdekt.</strong></p>
-        <p>Restoring is voor ons een intiem proces — één waarbij we luisteren naar wat een wagen nodig heeft, en vooral naar wat hij wil behouden.</p>
-        <p>We respecteren de originele lijnen, materialen en geest van het ontwerp. Met zachte handen en technische finesse brengen we vorm, detail en balans terug, zonder het verhaal van de auto uit te wissen.</p>
-        <p>Geen over-restauratie, maar subtiele keuzes, consistente kwaliteit en een diep gevoel voor authenticiteit.</p>
-      </div>
-
-      <div class="panel" id="panel-service">
-        <div class="panel-title">Service</div>
-        <p><strong>Zorg die verder gaat dan onderhoud.</strong></p>
-        <p>Service bij DRS Classics is persoonlijk. We werken met een beperkt aantal wagens tegelijk, zodat jouw auto de volledige aandacht krijgt — en jij volledige rust.</p>
-        <p>We plannen onderhoud, check-ups en voorbereidingen op ritten of langere stilstand. Steeds in overleg, altijd transparant.</p>
-        <p>Je krijgt één aanspreekpunt, duidelijke updates en de zekerheid dat alles met precisie gebeurt.</p>
-      </div>
-    </div>
-
-    <div class="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:info@drs-classics.be">info@drs-classics.be</a>
-        <a href="tel:+32478014317">Atelier: +32 478 01 43 17</a>
-        <a href="tel:+32499705870">Coördinatie: +32 499 70 58 70</a>
-        <a href="https://maps.app.goo.gl/kdcUBGwdJLaf97zP7" target="_blank" rel="noopener noreferrer">Noorderstraat 50, 1502 Lembeek</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const keywords = document.querySelectorAll(".keyword");
-    const panels = {
-      detailing: document.getElementById("panel-detailing"),
-      restoring: document.getElementById("panel-restoring"),
-      service: document.getElementById("panel-service")
-    };
-
-    const tagline = document.getElementById("tagline");
-    const keywordsContainer = document.getElementById("keywords");
-    const logo = document.getElementById("logo");
-
-    function hideAllPanels() {
-      Object.values(panels).forEach(panel => {
-        panel.classList.remove("active");
-        panel.style.display = "none";
-        panel.style.opacity = 0;
-      });
-    }
-
-    function resetView() {
-      tagline.classList.remove("hidden");
-
-      if (window.innerWidth <= 600) {
-        keywordsContainer.style.marginTop = "2.8rem";
-      } else {
-        keywordsContainer.style.marginTop = "2.2rem";
-      }
-
-      keywords.forEach(keyword => keyword.classList.remove("active"));
-      hideAllPanels();
-    }
-
-    function openPanel(target, clickedKeyword) {
-      tagline.classList.add("hidden");
-
-      if (window.innerWidth <= 600) {
-        keywordsContainer.style.marginTop = "0.8rem";
-      }
-
-      keywords.forEach(keyword => keyword.classList.remove("active"));
-      clickedKeyword.classList.add("active");
-
-      hideAllPanels();
-
-      const activePanel = panels[target];
-      activePanel.style.display = "block";
-
-      setTimeout(() => {
-        activePanel.classList.add("active");
-        activePanel.style.opacity = 1;
-      }, 10);
-    }
-
-    keywords.forEach(keyword => {
-      keyword.addEventListener("click", () => {
-        openPanel(keyword.dataset.target, keyword);
-      });
-    });
-
-    logo.addEventListener("click", () => {
-      resetView();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    resetView();
-  </script>
-</body>
-</html>
+<div class="announcement">✳ &nbsp; Een gezellig clubhuis voor creatieve vingers en koffiedrinkers &nbsp; ✳</div>
+<nav aria-label="Hoofdnavigatie"><div class="container nav-inner">
+<a href="#boven" class="brand" aria-label="Hilde's Clubhuis home"><span>hilde's<small>clubhuis</small></span><span class="brand-flower">✳</span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+<div class="navlinks" id="navlinks"><a href="#vrij-knutselen">Vrij knutselen</a><a href="#workshops">Workshops</a><a href="#shop">Knutselpakketjes</a><a href="#over">Over Hilde</a><a class="pill" href="#vrij-knutselen">Bekijk de agenda <span>↗</span></a></div>
+</div></nav>
+<main id="boven">
+<section class="hero"><div class="container hero-grid">
+<div class="hero-text"><div class="hero-kicker eyebrow"><span class="dot"></span> Welkom bij Hilde's Clubhuis</div>
+<h1 class="display">Maak maar <em>iets</em> moois.</h1>
+<p>Een plek om te knutselen, bij te leren, gezellig te babbelen en vooral: niet te denken aan de afwas thuis. De koffie staat al bijna klaar.</p>
+<div class="hero-actions"><a class="pill coral" href="#vrij-knutselen">Kom vrij knutselen <span>↗</span></a><a class="pill light" href="#workshops">Ontdek de workshops <span>↗</span></a></div>
+</div>
+<div class="hero-art"><div class="photo-frame"><img src="https://tanchenstudio.com/cdn/shop/files/MALLI-4_900x.png?v=1737345971" alt="Kralensleutelhanger als tijdelijk sfeerbeeld van Tanchen Studio" loading="eager" /></div><div class="float-note">creatief<br/>mag<br/>chaotisch!</div><div class="float-card">Voor makers,<br/>dromers &<br/>taarteters.</div><div class="hero-spark" aria-hidden="true">✳</div><span class="photo-credit">SFEERBEELD: TANCHEN STUDIO (TIJDELIJK)</span></div>
+</div></section>
+<div class="ticker"><p>✳ &nbsp; Met je handen, met je hoofd uit &nbsp; ✳ &nbsp; Voor beginners en enthousiastelingen &nbsp; ✳ &nbsp; Met koffie en iets lekkers &nbsp; ✳</p></div>
+<section class="section open-studio" id="vrij-knutselen"><div class="container">
+<div class="section-heading"><div><span class="eyebrow">01 / Schuif gezellig aan</span><h2 class="display">Vrij knutselen.<br/><em>Jij kiest wat.</em></h2></div><p>Een vrije namiddag om eindelijk dat ene project af te maken. Of om gewoon iets nieuws te proberen. Zonder vaste opdracht, zonder prestatiedruk.</p></div>
+<div class="studio-split"><div class="studio-side"><h3 class="display">Neem je goesting mee. De rest komt wel.</h3><p>Breng je eigen knutselmateriaal mee of snuister tussen de materialen die je ter plaatse kan kopen. Zoek een plekje aan tafel en maak waar jij zin in hebt.</p><ul class="studio-perks"><li><span class="perk-icon">✂</span> Eigen materialen welkom</li><li><span class="perk-icon">✿</span> Knutselmateriaal ter plaatse te koop</li><li><span class="perk-icon">☕</span> Koffie en taart verkrijgbaar</li></ul></div>
+<div><div class="date-list">
+<div class="date-row"><div class="date-tile"><strong>22</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Een zondag vol geknutsel</h4><p>14:00–17:00 · Vrij atelier · Voorbeeldmoment</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="0" aria-label="Bekijk zondag 22 november">↗</button></div>
+<div class="date-row"><div class="date-tile"><strong>29</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Knutselen & koffie</h4><p>14:00–17:00 · Vrij atelier · Voorbeeldmoment</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="1" aria-label="Bekijk zondag 29 november">↗</button></div>
+<div class="date-row"><div class="date-tile"><strong>06</strong><span>ZO DEC</span></div><div class="date-copy"><h4>Een middag voor jezelf</h4><p>14:00–17:00 · Vrij atelier · Voorbeeldmoment</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="2" aria-label="Bekijk zondag 6 december">↗</button></div>
+</div><p class="fine-print">Dit zijn voorbeelddata voor het websiteconcept. Definitieve openingsmomenten en praktische afspraken volgen later.</p></div></div>
+</div></section>
+<section class="section workshops" id="workshops"><div class="container">
+<div class="section-heading"><div><span class="eyebrow">02 / Samen iets nieuws leren</span><h2 class="display">Workshops waar je<br/><em>blij van wordt.</em></h2></div><p>Je leert een nieuwe techniek, maakt iets met je eigen handen en gaat naar huis met iets waar je trots op bent. Inclusief onbeperkt koffie, thee en taart. Ja, écht.</p></div>
+<div class="workshop-grid">
+<article class="item-card"><div class="visual img-tanchen"><span class="flag">Kralen & kleur</span><img src="https://tanchenstudio.com/cdn/shop/files/TANCHEN_PET-NAT_PET_PULPO_2_0334fca9-6593-42c3-a366-a82142ae5e2f_900x.jpg?v=1737285571" alt="Kralensleutelhanger, tijdelijk sfeerbeeld van Tanchen Studio" loading="lazy" /></div><div class="card-details"><h3>Maak je eigen sleutelhanger</h3><p>Leer hoe je kralen combineert, kleuren kiest en een unieke sleutelhanger samenstelt. Van eerste kraal tot laatste knoop.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="0">Ontdek deze workshop ↗</button></div></article>
+<article class="item-card"><div class="visual"><span class="flag">Papier & plezier</span><div class="card-art paper-art" role="img" aria-label="Grafische illustratie van een zelfgemaakte wenskaart"></div></div><div class="card-details"><h3>Kaartjes om te koesteren</h3><p>Leer spelen met papier, kleuren, compositie en kleine details. Maak kaartjes die eigenlijk te mooi zijn om weg te geven.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="1">Ontdek deze workshop ↗</button></div></article>
+<article class="item-card"><div class="visual"><span class="flag">Inkt & indruk</span><div class="card-art lino-art" role="img" aria-label="Grafische illustratie van een linoprint met bloemmotief"></div></div><div class="card-details"><h3>Linodruk voor beginners</h3><p>Van schets tot druk: ontdek hoe je een eigen stempel snijdt en een kleine reeks prints maakt. Lekker met je handen bezig.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="2">Ontdek deze workshop ↗</button></div></article>
+</div><p class="fine-print">Workshops zijn conceptvoorbeelden. Concrete momenten, duur en tarieven worden later ingevuld. Tanchen Studio is enkel een tijdelijke beeldreferentie.</p>
+</div></section>
+<div class="mid-banner"><div class="container"><p>✳ &nbsp; Je hoeft niet creatief te zijn. Je moet gewoon beginnen. &nbsp; ✳</p></div></div>
+<section class="section shop" id="shop"><div class="container">
+<div class="section-heading"><div><span class="eyebrow">03 / Het clubhuis bij jou thuis</span><h2 class="display">Een doosje vol<br/><em>goesting.</em></h2></div><p>Geen idee waar te beginnen? Onze knutselpakketjes bundelen wat je nodig hebt voor één fijn project. Open de doos, zet koffie en ga ervoor.</p></div>
+<div class="shop-grid">
+<article class="item-card"><div class="product-visual kit-card"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">✉</span><b>kaartjes<br/>maken</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 01</div><h3>Het kaartjespakket</h3><p>Een fijne eerste stap in de wereld van zelfgemaakte kaartjes. Papier, leuke details en inspiratie bij elkaar.</p><button class="card-link detail-btn" data-kind="kit" data-id="0">Bekijk het pakket ↗</button></div></article>
+<article class="item-card"><div class="product-visual kit-key"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">❋</span><b>sleutel<br/>hanger</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 02</div><h3>Het kralenpakket</h3><p>Speel met kleuren, maak je eigen combinatie en knutsel een sleutelhanger die helemaal van jou is.</p><button class="card-link detail-btn" data-kind="kit" data-id="1">Bekijk het pakket ↗</button></div></article>
+<article class="item-card"><div class="product-visual kit-lino"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">✳</span><b>lino<br/>druk</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 03</div><h3>Het linopakket</h3><p>Ontwerp, snijd en druk je eigen kleine kunstwerk. Een creatief moment, van eerste schets tot afdruk.</p><button class="card-link detail-btn" data-kind="kit" data-id="2">Bekijk het pakket ↗</button></div></article>
+</div><p class="shop-note">Voorlopige productvoorstellen. De precieze inhoud, veiligheidsinstructies, prijzen en bestelmogelijkheden worden uitgewerkt voor de lancering.</p>
+</div></section>
+<section class="section about" id="over"><div class="container about-grid">
+<div class="about-art"><div class="poster">meer<br/>maken.<br/>minder<br/>moeten.</div><div class="stamp">MET LIEFDE<br/>EN VEEL<br/>GEPRUTS ✳</div></div>
+<div class="about-copy"><div class="eyebrow">Welkom in het clubhuis</div><h2 class="display">Een plek voor<br/><em>de makers.</em></h2><p>Hilde's Clubhuis is een idee voor een plek waar creativiteit niet moeilijk hoeft te zijn. Waar je aan tafel schuift, wat probeert, misschien iets opnieuw doet en ondertussen gezellig bijpraat.</p><p>Of je nu voor het eerst een guts vasthebt of al jaren knutselt: trek een stoel bij. Hier draait het om plezier in het maken.</p><a class="pill coral" href="#vrij-knutselen">Schuif maar aan ↗</a></div>
+</div></section>
+</main>
+<footer><div class="container"><div class="footer-grid"><p class="footer-big">Tot aan de<br/><em>knutseltafel.</em> ✳</p><div class="footer-side"><p>Vrij knutselen, workshops en kleine creatieve avonturen voor thuis.</p><a class="pill coral" href="#boven">Terug naar boven ↑</a></div></div><div class="footer-bottom"><span>© Hilde's Clubhuis · Websiteconcept / mock-up · Alle data voorlopig</span><span>Tanchen Studio-beelden uitsluitend als tijdelijke placeholders. Vervangen voor publicatie. <a href="https://tanchenstudio.com" target="_blank" rel="noopener noreferrer">Bron</a></span></div></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-content"><button class="modal-close" id="modalClose" aria-label="Sluiten">×</button><span class="eyebrow" id="modalEyebrow"></span><h2 id="modalTitle"></h2><p id="modalDescription"></p><div id="modalExtra"></div><div class="modal-note">✳ Dit is een interactieve mock-up. Reservaties en bestellingen zijn nog niet actief.</div></div></div>
+<script>
+(function(){
+ var menuBtn=document.getElementById('menuToggle'),nav=document.getElementById('navlinks'),modal=document.getElementById('modal'),close=document.getElementById('modalClose');
+ menuBtn.addEventListener('click',function(){var open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+ nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';});});
+ var dates=[
+ {title:'Een zondag vol geknutsel',date:'Zondag 22 november 2026',time:'14:00–17:00'},
+ {title:'Knutselen & koffie',date:'Zondag 29 november 2026',time:'14:00–17:00'},
+ {title:'Een middag voor jezelf',date:'Zondag 6 december 2026',time:'14:00–17:00'}];
+ var workshops=[
+ {title:'Maak je eigen sleutelhanger',description:'Leer hoe je kralen selecteert en combineert, een mooi ritme opbouwt en je sleutelhanger netjes afwerkt.',items:['Alle benodigde materialen tijdens de workshop','Begeleiding, ook voor absolute beginners','Je eigen creatie mee naar huis','Onbeperkt koffie, thee én taart']},
+ {title:'Kaartjes om te koesteren',description:'Leer hoe je met papier, kleur, lagen en compositie persoonlijke wenskaarten ontwerpt.',items:['Papier en decoratiemateriaal om te experimenteren','Creatieve technieken en stap-voor-stap tips','Je zelfgemaakte kaartjes mee naar huis','Onbeperkt koffie, thee én taart']},
+ {title:'Linodruk voor beginners',description:'Ontdek de basis van linodruk: een motief ontwerpen, veilig snijden en afdrukken.',items:['Uitleg over het materiaal en veilig werken','Begeleiding bij schets, snijwerk en afdruk','Je eigen prints om mee te nemen','Onbeperkt koffie, thee én taart']}];
+ var kits=[
+ {title:'Het kaartjespakket',description:'Een toegankelijk pakket voor je eerste zelfgemaakte kaartjes.',items:['Kaarten en creatief papier','Decoratieve elementen en materialen','Een eenvoudige stap-voor-stap handleiding','Inspiratie om meteen te beginnen']},
+ {title:'Het kralenpakket',description:'Alles rond een speelse, zelfgemaakte kralensleutelhanger.',items:['Een selectie kralen en kleuren','Passend rijg- en bevestigingsmateriaal','Sleutelring','Een eenvoudige stap-voor-stap handleiding']},
+ {title:'Het linopakket',description:'Een starterspakket voor een eerste kennismaking met linodruk.',items:['Linomateriaal en een basisset gereedschap','Drukmateriaal en papier','Handleiding met veiligheidsinstructies','Een klein project als eerste oefening']}];
+ function list(items){return '<ul>'+items.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>';}
+ function openModal(kind,id){var item,eyebrow='',description='',extra='';
+ if(kind==='date'){item=dates[id];eyebrow='Vrij atelier · Voorbeeldmoment';description=item.date+' · '+item.time+'.';extra='<p>Neem je eigen knutselmateriaal mee of koop materiaal ter plaatse. Koffie en taart zijn afzonderlijk verkrijgbaar.</p><p>De getoonde datum is fictief als invulling van het ontwerp. Je kan hier nog niet reserveren.</p>';}
+ if(kind==='workshop'){item=workshops[id];eyebrow='Workshop · Concept';description=item.description;extra='<p><strong>Wat mag je verwachten?</strong></p>'+list(item.items)+'<p>Datum, duur en tarief volgen later.</p>';}
+ if(kind==='kit'){item=kits[id];eyebrow='DIY-pakket · Concept';description=item.description;extra='<p><strong>Voorziene inhoud (nog te bevestigen):</strong></p>'+list(item.items)+'<p>Prijs en beschikbaarheid volgen bij de lancering.</p>';}
+ if(!item)return;
+ document.getElementById('modalEyebrow').textContent=eyebrow;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalDescription').textContent=description;document.getElementById('modalExtra').innerHTML=extra;modal.hidden=false;close.focus();document.body.style.overflow='hidden';
+ }
+ function closeModal(){modal.hidden=true;document.body.style.overflow='';}
+ document.querySelectorAll('.detail-btn').forEach(function(b){b.addEventListener('click',function(){openModal(b.dataset.kind,Number(b.dataset.id));});});
+ close.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeModal();});
+})();
+</script>
+</body></html>
