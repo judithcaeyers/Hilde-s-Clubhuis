@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#f8f4e9" />
+<meta name="theme-color" content="#f5f8f4" />
 <meta name="description" content="Hilde's Clubhuis: vrij knutselen, creatieve workshops en knutselpakketjes om thuis aan de slag te gaan." />
 <title>Hilde's Clubhuis — Maak maar iets moois.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -206,10 +206,111 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 
 @media(max-width:1120px) and (min-width:931px){.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .pill{padding:10px 12px;min-height:42px}}
 @media(max-width:930px) and (min-width:761px){.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:var(--paper);padding:24px 27px;border-bottom:1px solid var(--ink);flex-direction:column;align-items:stretch;gap:20px}.navlinks.open{display:flex}.navlinks .pill,.navlinks .nav-cart{align-self:flex-start}}
+
+/* Hilde's palette: exuberant blues and greens, with pink/lilac accents.
+   Playful, handmade, and editorial; no yellow backgrounds. */
+:root{
+ --paper:#f5f8f4;
+ --cream:#fffdf8;
+ --ink:#1c383a;
+ --red:#f5a0b8;
+ --yellow:#9cddc6;
+ --lilac:#d8cff5;
+ --blue:#b8dafa;
+ --green:#c0e3d5;
+ --hair:rgba(28,56,58,.19);
+ --cobalt:#3354b8;
+ --teal:#12796f;
+ --pink:#f5a0b8;
+ --mint:#9cddc6
+}
+body{background:var(--paper)}
+nav{background:rgba(245,248,244,.96)}
+::selection{background:#b6e2d4;color:var(--ink)}
+.announcement{background:var(--cobalt);color:#fff;border-bottom:1px solid var(--ink)}
+.brand{color:var(--ink)}
+.brand-flower{color:var(--teal);filter:drop-shadow(4px 3px 0 #eaa4cd);transform:rotate(-12deg)}
+.navlinks a:hover{color:var(--cobalt)}
+.pill{background:var(--cobalt);border-color:var(--ink);color:#fff;box-shadow:3px 4px 0 rgba(28,56,58,.12)}
+.pill.coral{background:var(--teal);color:#fff}
+.pill.coral:hover,.pill:hover{background:var(--cobalt);color:#fff}
+.pill.light{background:#fffdf8;color:var(--ink)}
+.pill.light:hover{background:var(--lilac);color:var(--ink)}
+.hero{background:
+ radial-gradient(circle at 11% 75%,rgba(181,228,214,.57),transparent 33%),
+ radial-gradient(circle at 70% 12%,rgba(209,210,253,.45),transparent 37%),
+ var(--paper)}
+.hero h1 em{color:var(--cobalt);text-decoration-line:underline;text-decoration-style:wavy;text-decoration-color:#89c5b8;text-decoration-thickness:5px;text-underline-offset:9px}
+.hero-kicker .dot{background:var(--teal)}
+.hero-art:before{background:#b0dce1;border-radius:47% 53% 45% 55%;transform:rotate(-13deg)}
+.hero-art .float-note{background:var(--pink);color:var(--ink);box-shadow:3px 6px 0 var(--cobalt);border-radius:46% 54% 52% 48%}
+.hero-art .float-card{background:var(--lilac);color:var(--ink);box-shadow:6px 6px 0 var(--cobalt)}
+.ticker{background:var(--teal);color:#fff}
+.open-studio{background:linear-gradient(120deg,#b9e2d6 0%,#d2e7e5 52%,#c4dcf5 100%);position:relative}
+.open-studio::before{content:"✿";position:absolute;right:3%;top:26px;font:normal 95px/1 "Fraunces",Georgia,serif;color:rgba(46,117,127,.13);transform:rotate(18deg);pointer-events:none}
+.date-tile{background:#f6fbff;box-shadow:3px 4px 0 rgba(46,117,127,.15);border-radius:16px}
+.date-row:nth-child(2) .date-tile{background:#d5f1e5}
+.date-row:nth-child(3) .date-tile{background:#e3ddfa}
+.round-arrow{background:var(--cobalt);color:#fff;border-color:var(--ink)}
+.round-arrow:hover{background:var(--teal)}
+.workshops{background:#fbfcfa}
+.workshop-grid .item-card:nth-child(1) .visual{border-bottom:5px solid var(--teal)}
+.workshop-grid .item-card:nth-child(2) .visual{border-bottom:5px solid #a798d9}
+.workshop-grid .item-card:nth-child(3) .visual{border-bottom:5px solid var(--cobalt)}
+.workshops .card-details h3{color:var(--ink)}
+.workshops .card-link:hover{color:var(--cobalt);border-color:var(--cobalt)}
+.paper-art{background:#d7ddfb}
+.paper-art:before{background:#f8fff9;box-shadow:12px 12px 0 #a9bfe6}
+.paper-art:after{color:#3f69a6}
+.lino-art{background:#9dd4c5}
+.lino-art:before{background:#d4f1e2;border-color:#286c6c;box-shadow:14px 15px 0 #5ca994}
+.lino-art:after{color:#426cae}
+.mid-banner{background:#d2d0f6;border-bottom:1px solid var(--ink)}
+.mid-banner p{color:var(--ink)}
+.shop{background:radial-gradient(circle at 8% 12%,#d4e9fc 0,transparent 27%),linear-gradient(150deg,#cee9df 0%,#e5f0ec 58%,#dce6fa 100%)}
+.shop-kicker{background:var(--lilac)}
+.shop-intro-copy h3{color:#244e78}
+.shop-promises span::first-letter{color:var(--teal)}
+.shop-product{background:#fffefd;border-radius:19px;box-shadow:5px 7px 0 rgba(51,84,184,.1);transition:transform .25s}
+.shop-product:hover{transform:translateY(-4px)}
+.shop-product-image{background:#d4e6eb}
+.shop-product:nth-child(1) .shop-tag{background:#eee4fb}
+.shop-product:nth-child(2) .shop-tag{background:#e0f1e8}
+.shop-product:nth-child(3) .shop-tag{background:#dce9fb}
+.shop-product h3{color:var(--ink)}
+.shop-buy{background:var(--teal);color:#fff;border-color:var(--ink)}
+.shop-buy:hover{background:var(--cobalt);color:#fff}
+.product-price{color:var(--cobalt)}
+.shop-endnote{color:#274f6c}
+.about{background:#f6f9f4}
+.about-art{background:#c8dff1}
+.about-art .poster{background:#b4e1d2;box-shadow:11px 11px 0 var(--cobalt);border-radius:9px}
+.about-art .stamp{background:#edb0ce}
+.about-copy h2 em{color:var(--cobalt)}
+footer{background:#163b55;color:#f8fcf9}
+.nav-cart{background:#d4e6f6}
+.nav-cart span{background:#f3a3c0;color:var(--ink)}
+.cart-close,.modal-close{background:var(--lilac)}
+.modal-content{box-shadow:12px 12px 0 var(--cobalt)}
+.modal-note{background:#d8ecdf}
+.cart-panel{background:#f6fbf7}
+.cart-item img{background:#e6f0ef}
+.shop-details:hover{color:var(--cobalt);border-color:var(--cobalt)}
+/* Gentle hand-drawn flourishes instead of busy decorative patterns */
+.section-heading h2:after{content:"✳";display:inline-block;vertical-align:top;font:normal 27px/1 Arial,sans-serif;color:var(--teal);margin:0 0 0 14px;transform:rotate(15deg)}
+.workshops .section-heading h2:after{color:#b088c8}
+.shop-intro h2:after{content:"✿";display:inline-block;vertical-align:top;font:normal 33px/1 Georgia,serif;color:var(--teal);margin-left:14px;transform:rotate(-16deg)}
+@media(max-width:760px){
+ .open-studio::before{font-size:64px;right:0;top:18px}
+ .section-heading h2:after{font-size:19px;margin-left:8px}
+ .shop-intro h2:after{font-size:24px;margin-left:8px}
+ .shop-product:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
-<div class="announcement">✳ &nbsp; Een gezellig clubhuis voor creatieve vingers en koffiedrinkers &nbsp; ✳</div>
+<div class="announcement">✳ &nbsp; Een kleurrijk clubhuis voor creatieve vingers en koffiedrinkers &nbsp; ✳</div>
 <nav aria-label="Hoofdnavigatie"><div class="container nav-inner">
 <a href="#boven" class="brand" aria-label="Hilde's Clubhuis home"><span>hilde's<small>clubhuis</small></span><span class="brand-flower">✳</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -222,15 +323,15 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 <p>Een plek om te knutselen, bij te leren, gezellig te babbelen en vooral: niet te denken aan de afwas thuis. De koffie staat al bijna klaar.</p>
 <div class="hero-actions"><a class="pill coral" href="#vrij-knutselen">Kom vrij knutselen <span>↗</span></a><a class="pill light" href="#workshops">Ontdek de workshops <span>↗</span></a></div>
 </div>
-<div class="hero-art"><div class="photo-frame studio-photo"><img src="https://images.unsplash.com/photo-1770992255800-5def9e29b650?auto=format&fit=crop&w=1400&q=82" alt="Een warm creatief atelier met materialen en werktafels" loading="eager" /></div><div class="float-note">gezellig<br/>aan de<br/>knutseltafel</div><div class="float-card">Koffie.<br/>Taart.<br/>Knutselen.</div></div></div></section>
+<div class="hero-art"><div class="photo-frame studio-photo"><img src="https://images.unsplash.com/photo-1770992255800-5def9e29b650?auto=format&fit=crop&w=1400&q=82" alt="Een warm creatief atelier met materialen en werktafels" loading="eager" /></div><div class="float-note">gezellig<br/>aan de<br/>knutseltafel</div><div class="float-card">Knippen.<br/>Plakken.<br/>Genieten.</div></div></div></section>
 <div class="ticker"><p>✳ &nbsp; Met je handen, met je hoofd uit &nbsp; ✳ &nbsp; Voor beginners en enthousiastelingen &nbsp; ✳ &nbsp; Met koffie en iets lekkers &nbsp; ✳</p></div>
 <section class="section open-studio" id="vrij-knutselen"><div class="container">
 <div class="section-heading"><div><span class="eyebrow">01 / Schuif gezellig aan</span><h2 class="display">Vrij knutselen.<br/><em>Jij kiest wat.</em></h2></div><p>Een vrije namiddag om eindelijk dat ene project af te maken. Of om gewoon iets nieuws te proberen. Zonder vaste opdracht, zonder prestatiedruk.</p></div>
 <div class="studio-split"><div class="studio-side"><h3 class="display">Neem je goesting mee. De rest komt wel.</h3><p>Breng je eigen knutselmateriaal mee of snuister tussen de materialen die je ter plaatse kan kopen. Zoek een plekje aan tafel en maak waar jij zin in hebt.</p><ul class="studio-perks"><li><span class="perk-icon">✂</span> Eigen materialen welkom</li><li><span class="perk-icon">✿</span> Knutselmateriaal ter plaatse te koop</li><li><span class="perk-icon">☕</span> Koffie en taart verkrijgbaar</li></ul></div>
 <div><div class="date-list">
-<div class="date-row"><div class="date-tile"><strong>22</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Een zondag vol geknutsel</h4><p>14:00–17:00 · Vrij atelier · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="0" aria-label="Bekijk zondag 22 november">↗</button></div>
-<div class="date-row"><div class="date-tile"><strong>29</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Knutselen & koffie</h4><p>14:00–17:00 · Vrij atelier · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="1" aria-label="Bekijk zondag 29 november">↗</button></div>
-<div class="date-row"><div class="date-tile"><strong>06</strong><span>ZO DEC</span></div><div class="date-copy"><h4>Een middag voor jezelf</h4><p>14:00–17:00 · Vrij atelier · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="2" aria-label="Bekijk zondag 6 december">↗</button></div>
+<div class="date-row"><div class="date-tile"><strong>22</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Een zondag vol geknutsel</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="0" aria-label="Bekijk zondag 22 november">↗</button></div>
+<div class="date-row"><div class="date-tile"><strong>29</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Knutselen & koffie</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="1" aria-label="Bekijk zondag 29 november">↗</button></div>
+<div class="date-row"><div class="date-tile"><strong>06</strong><span>ZO DEC</span></div><div class="date-copy"><h4>Een middag voor jezelf</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="2" aria-label="Bekijk zondag 6 december">↗</button></div>
 </div><p class="fine-print">De data en praktische afspraken worden nog bevestigd.</p></div></div>
 </div></section>
 <section class="section workshops" id="workshops"><div class="container">
