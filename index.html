@@ -181,6 +181,28 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 .shop-endnote{margin-top:36px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:22px;letter-spacing:-.02em}
 @media(max-width:1050px){.shop-intro{gap:25px}.shop-intro-copy{padding-left:25px}.shop-product-image{height:280px}.shop-buy{padding:10px;font-size:11px}.product-price{font-size:19px}}
 @media(max-width:760px){.shop-intro{grid-template-columns:1fr;gap:22px}.shop-intro h2{font-size:57px}.shop-intro-copy{border-left:none;border-top:1px solid var(--ink);padding:25px 0 0}.shop-grid{gap:20px}.shop-product-image{height:340px}.shop-product-info{padding:24px}.shop-endnote{font-size:19px}}
+
+.nav-cart{border:1px solid var(--ink);background:var(--cream);border-radius:99px;display:inline-flex;align-items:center;gap:8px;padding:9px 13px;font-size:19px;line-height:1}
+.nav-cart span{display:inline-grid;place-items:center;border-radius:50%;background:var(--red);min-width:20px;height:20px;padding:0 4px;font-weight:800;font-size:11px}
+.cart-overlay[hidden],.cart-panel[hidden]{display:none}
+.cart-overlay{position:fixed;inset:0;background:rgba(25,24,22,.55);z-index:99}
+.cart-panel{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:100;background:var(--paper);border-left:2px solid var(--ink);display:flex;flex-direction:column;box-shadow:-12px 0 30px rgba(0,0,0,.15)}
+.cart-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:27px 25px;border-bottom:1px solid var(--ink)}
+.cart-top h2{font-family:"Fraunces",Georgia,serif;letter-spacing:-.04em;margin:3px 0 0;font-size:35px}
+.cart-close{background:var(--yellow);width:38px;height:38px;border:1px solid var(--ink);border-radius:50%;font-size:22px}
+.cart-items{padding:18px 24px;overflow:auto;flex:1}
+.cart-item{display:grid;grid-template-columns:78px 1fr;gap:15px;border-bottom:1px solid var(--hair);padding:16px 0}
+.cart-item img{width:78px;height:82px;object-fit:cover;border:1px solid var(--ink);border-radius:7px}
+.cart-item h3{font-size:15px;margin:0 0 8px}
+.cart-item p{font-size:13px;margin:0 0 9px}
+.qty-controls{display:flex;align-items:center;gap:10px}
+.qty-controls button{width:26px;height:26px;border:1px solid var(--ink);background:transparent;border-radius:50%}
+.cart-empty{line-height:1.6;color:#5c5952;padding:24px 0}
+.cart-footer{padding:24px;border-top:1px solid var(--ink)}
+.cart-total{display:flex;justify-content:space-between;font-size:17px;font-weight:800;margin-bottom:13px}
+.cart-caption{font-size:12px;line-height:1.55;color:#5d5952;margin:0 0 17px}
+.cart-continue{width:100%}
+@media(max-width:760px){.nav-cart{align-self:flex-start}}
 </style>
 </head>
 <body>
@@ -188,7 +210,7 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 <nav aria-label="Hoofdnavigatie"><div class="container nav-inner">
 <a href="#boven" class="brand" aria-label="Hilde's Clubhuis home"><span>hilde's<small>clubhuis</small></span><span class="brand-flower">✳</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-<div class="navlinks" id="navlinks"><a href="#vrij-knutselen">Vrij knutselen</a><a href="#workshops">Workshops</a><a href="#shop">Knutselpakketjes</a><a href="#over">Over Hilde</a><a class="pill" href="#vrij-knutselen">Bekijk de agenda <span>↗</span></a></div>
+<div class="navlinks" id="navlinks"><a href="#vrij-knutselen">Vrij knutselen</a><a href="#workshops">Workshops</a><a href="#shop">Webshop</a><a href="#over">Over Hilde</a><a class="pill" href="#vrij-knutselen">Bekijk de agenda <span>↗</span></a><button type="button" class="nav-cart" id="cartOpen" aria-label="Open winkelmandje">🛍 <span id="cartBadge">0</span></button></div>
 </div></nav>
 <main id="boven">
 <section class="hero"><div class="container hero-grid">
@@ -252,6 +274,13 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 <div class="about-copy"><div class="eyebrow">Welkom in het clubhuis</div><h2 class="display">Een plek voor<br/><em>de makers.</em></h2><p>Bij Hilde's Clubhuis hoeft creativiteit niet moeilijk te zijn. Waar je aan tafel schuift, wat probeert, misschien iets opnieuw doet en ondertussen gezellig bijpraat.</p><p>Of je nu voor het eerst een guts vasthebt of al jaren knutselt: trek een stoel bij. Hier draait het om plezier in het maken.</p><a class="pill coral" href="#vrij-knutselen">Schuif maar aan ↗</a></div>
 </div></section>
 </main>
+
+<div class="cart-overlay" id="cartOverlay" hidden></div>
+<aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+ <div class="cart-top"><div><span class="eyebrow">Hilde's Clubhuis</span><h2 id="cartTitle">Je winkelmandje</h2></div><button type="button" class="cart-close" id="cartClose" aria-label="Sluit winkelmandje">×</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="cart-footer"><div class="cart-total"><span>Totaal</span><span id="cartTotal">€ 0,00</span></div><p class="cart-caption">De prijzen zijn richtprijzen. Afrekenen is nog niet beschikbaar.</p><button type="button" class="pill light cart-continue" id="cartContinue">Verder winkelen ↗</button></div>
+</aside>
 <footer><div class="container"><div class="footer-grid"><p class="footer-big">Tot aan de<br/><em>knutseltafel.</em> ✳</p><div class="footer-side"><p>Vrij knutselen, workshops en kleine creatieve avonturen voor thuis.</p><a class="pill coral" href="#boven">Terug naar boven ↑</a></div></div><div class="footer-bottom"><span>© Hilde's Clubhuis · Met liefde gemaakt</span><span>Beelden: Tanchen Studio en Haberdoedas / Unsplash. <a href="https://tanchenstudio.com" target="_blank" rel="noopener noreferrer">Bron</a></span></div></div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-content"><button class="modal-close" id="modalClose" aria-label="Sluiten">×</button><span class="eyebrow" id="modalEyebrow"></span><h2 id="modalTitle"></h2><p id="modalDescription"></p><div id="modalExtra"></div><div class="modal-note"></div></div></div>
 <script>
@@ -283,6 +312,39 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
  document.querySelectorAll('.detail-btn').forEach(function(b){b.addEventListener('click',function(){openModal(b.dataset.kind,Number(b.dataset.id));});});
  close.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeModal();});
+
+ var shopProducts=[
+  {title:'Het kaartjespakket',price:24.95,img:'assets/pakket-cards.svg'},
+  {title:'Het sleutelhangerpakket',price:19.95,img:'assets/pakket-key.svg'},
+  {title:'Het linopakket',price:29.95,img:'assets/pakket-lino.svg'}
+ ];
+ var cart={},cartPanel=document.getElementById('cartPanel'),cartOverlay=document.getElementById('cartOverlay'),cartPreviousFocus=null;
+ function formatMoney(v){return '€ '+v.toLocaleString('nl-BE',{minimumFractionDigits:2,maximumFractionDigits:2});}
+ function cartCount(){return Object.values(cart).reduce(function(sum,n){return sum+n;},0);}
+ function renderCart(){
+  document.getElementById('cartBadge').textContent=cartCount();
+  var items=document.getElementById('cartItems');items.textContent='';
+  var total=0;
+  Object.keys(cart).filter(function(k){return cart[k]>0;}).forEach(function(k){
+   var p=shopProducts[Number(k)],qty=cart[k];total+=p.price*qty;
+   var item=document.createElement('div');item.className='cart-item';
+   item.innerHTML='<img src="'+p.img+'" alt="" /><div><h3>'+p.title+'</h3><p>'+formatMoney(p.price)+' per stuk</p><div class="qty-controls"><button type="button" data-qty="'+k+'" data-delta="-1" aria-label="Verwijder één '+p.title+'">−</button><strong>'+qty+'</strong><button type="button" data-qty="'+k+'" data-delta="1" aria-label="Voeg één '+p.title+' toe">+</button></div></div>';
+   items.appendChild(item);
+  });
+  if(!cartCount()){var empty=document.createElement('p');empty.className='cart-empty';empty.textContent='Nog niets in je winkelmandje. Tijd om iets leuks te maken!';items.appendChild(empty);}
+  document.getElementById('cartTotal').textContent=formatMoney(total);
+ }
+ function openCart(){cartPreviousFocus=document.activeElement;cartOverlay.hidden=false;cartPanel.hidden=false;document.body.style.overflow='hidden';document.getElementById('cartClose').focus();}
+ function closeCart(){cartOverlay.hidden=true;cartPanel.hidden=true;document.body.style.overflow='';if(cartPreviousFocus&&cartPreviousFocus.focus)cartPreviousFocus.focus();}
+ document.querySelectorAll('.shop-buy').forEach(function(button){button.addEventListener('click',function(){var k=button.dataset.product;cart[k]=(cart[k]||0)+1;renderCart();openCart();});});
+ document.getElementById('cartOpen').addEventListener('click',openCart);
+ document.getElementById('cartClose').addEventListener('click',closeCart);
+ document.getElementById('cartContinue').addEventListener('click',closeCart);
+ cartOverlay.addEventListener('click',closeCart);
+ document.getElementById('cartItems').addEventListener('click',function(ev){var button=ev.target.closest('button[data-qty]');if(!button)return;var k=button.dataset.qty;cart[k]=Math.max(0,(cart[k]||0)+Number(button.dataset.delta));renderCart();});
+ document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&!cartPanel.hidden)closeCart();});
+ renderCart();
+
 })();
 </script>
 </body></html>
