@@ -1,454 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#f5f8f4" />
-<meta name="description" content="Hilde's Clubhuis: vrij knutselen, creatieve workshops en knutselpakketjes om thuis aan de slag te gaan." />
-<title>Hilde's Clubhuis — Maak maar iets moois.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,30,1;9..144,700,30,1&display=swap" rel="stylesheet" />
-<style>
-:root{--paper:#f8f4e9;--cream:#fffaf0;--ink:#26251f;--red:#ef5842;--yellow:#f7df71;--lilac:#d9c5f4;--blue:#c5d9ed;--green:#cee6b9;--hair:rgba(38,37,31,.20);--radius:22px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
-button,a{font:inherit}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer}
-button:focus-visible,a:focus-visible{outline:3px solid #1949dc;outline-offset:3px}
-::selection{background:var(--yellow);color:var(--ink)}
-.container{max-width:1320px;margin:auto;padding:0 42px}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
-.display{font-family:"Fraunces",Georgia,serif;letter-spacing:-.055em;font-weight:700}
-.star{font-size:28px;display:inline-block}
-.announcement{background:var(--green);border-bottom:1px solid var(--ink);text-align:center;padding:9px 16px;font-weight:800;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
-nav{position:sticky;top:0;z-index:30;background:rgba(248,244,233,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
-.nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{font-family:"Fraunces",Georgia,serif;font-weight:700;line-height:.84;font-size:29px;letter-spacing:-.06em;display:inline-flex;align-items:center;gap:9px;flex-shrink:0}
-.brand small{display:block;font-family:"DM Sans",sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.20em;font-weight:800;margin-top:7px}
-.brand-flower{font-family:Arial,sans-serif;color:var(--red);font-size:40px;line-height:1}
-.navlinks{display:flex;align-items:center;gap:28px}
-.navlinks a{font-size:13px;font-weight:800;transition:color .2s}
-.navlinks a:hover{color:var(--red)}
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:47px;border:1.5px solid var(--ink);border-radius:99px;padding:11px 22px;background:var(--ink);color:white;font-size:13px;font-weight:800;transition:transform .2s,background .2s,color .2s}
-.pill:hover{transform:translateY(-3px)}
-.pill.light{background:transparent;color:var(--ink)}
-.pill.coral{background:var(--red);color:var(--ink)}
-.menu-toggle{display:none;border:1px solid var(--ink);border-radius:99px;background:transparent;width:45px;height:45px;font-size:22px}
-.hero{overflow:hidden;border-bottom:1px solid var(--ink)}
-.hero-grid{display:grid;grid-template-columns:52% 48%;min-height:660px}
-.hero-text{padding:92px 40px 76px 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-.hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:24px}
-.hero-kicker .dot{width:9px;height:9px;background:var(--red);border-radius:50%}
-.hero h1{font-size:clamp(64px,6.65vw,107px);line-height:.98;margin:0 0 27px}
-.hero h1 em{font-style:italic;color:var(--red)}
-.hero p{font-size:19px;line-height:1.52;max-width:450px;margin:0 0 31px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-art{position:relative;min-height:625px}
-.hero-art:before{content:"";position:absolute;inset:40px -80px 55px 25px;background:var(--lilac);border-radius:51% 43% 48% 41%;transform:rotate(-9deg)}
-.photo-frame{position:absolute;z-index:2;width:65%;height:65%;left:19%;top:12%;background:#eee;border:10px solid #fff;box-shadow:9px 13px 0 var(--ink);transform:rotate(6deg);overflow:hidden}
-.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.float-note{position:absolute;z-index:4;top:11%;right:-3%;background:var(--yellow);border:2px solid var(--ink);border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:24px;line-height:1.04;transform:rotate(13deg)}
-.float-card{position:absolute;z-index:3;bottom:10%;left:0;background:var(--red);padding:24px 29px;border:2px solid var(--ink);transform:rotate(-7deg);font-family:"Fraunces",Georgia,serif;font-size:31px;font-weight:700;line-height:1.1;box-shadow:6px 6px 0 var(--ink)}
-.hero-spark{position:absolute;z-index:3;bottom:9%;right:5%;font-size:100px;line-height:1;color:#f4cf42;transform:rotate(20deg);-webkit-text-stroke:1px var(--ink)}
-.photo-credit{position:absolute;z-index:3;bottom:14px;right:8%;font-size:10px;font-weight:800;letter-spacing:.04em}
-.ticker{background:var(--red);padding:15px 0;border-bottom:1px solid var(--ink);overflow:hidden;white-space:nowrap}
-.ticker p{margin:0;text-align:center;font-weight:800;font-size:14px;letter-spacing:.11em;text-transform:uppercase}
-.section{padding:104px 0 110px;scroll-margin-top:80px}
-.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:44px}
-.section-heading h2{font-size:clamp(48px,5vw,72px);line-height:1.03;margin:12px 0 0}
-.section-heading p{max-width:380px;font-size:17px;line-height:1.55;margin:0 0 5px}
-.label-chip{display:inline-flex;border:1px solid var(--ink);border-radius:99px;padding:7px 12px;font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:.06em}
-.open-studio{background:var(--blue);border-bottom:1px solid var(--ink)}
-.studio-split{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
-.studio-side h3{font-size:38px;line-height:1.12;margin:0 0 20px}
-.studio-side p{font-size:16px;line-height:1.7;margin:0 0 20px}
-.studio-perks{list-style:none;padding:0;margin:30px 0 0}
-.studio-perks li{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--hair);font-size:14px;font-weight:700}
-.perk-icon{font-size:20px}
-.date-list{border-top:1.5px solid var(--ink)}
-.date-row{display:grid;grid-template-columns:91px 1fr auto;align-items:center;gap:23px;padding:23px 0;border-bottom:1px solid var(--ink)}
-.date-tile{background:var(--cream);border:1px solid var(--ink);border-radius:13px;text-align:center;padding:10px 4px;transform:rotate(-3deg)}
-.date-tile strong{display:block;font-family:"Fraunces",Georgia,serif;font-size:35px;line-height:1}
-.date-tile span{font-size:11px;font-weight:800;letter-spacing:.1em}
-.date-copy h4{margin:0 0 6px;font-size:20px}
-.date-copy p{margin:0;color:#4e514e;font-size:13px}
-.round-arrow{border:1.5px solid var(--ink);border-radius:50%;background:var(--yellow);width:45px;height:45px;font-size:22px;transition:transform .2s}
-.round-arrow:hover{transform:rotate(-35deg)}
-.fine-print{font-size:12px;line-height:1.5;opacity:.75;margin-top:22px}
-.workshops{background:var(--paper);border-bottom:1px solid var(--ink)}
-.workshop-grid,.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.item-card{min-width:0}
-.visual{height:365px;position:relative;overflow:hidden;border:1px solid var(--ink);border-radius:15px 15px 0 0}
-.visual img{width:100%;height:100%;object-fit:cover;display:block}
-.visual .flag{position:absolute;z-index:2;top:15px;left:15px;background:var(--cream);border:1px solid var(--ink);padding:9px 13px;border-radius:30px;text-transform:uppercase;letter-spacing:.07em;font-size:10px;font-weight:800}
-.card-details{padding:23px 3px 6px}
-.card-details h3{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:29px;letter-spacing:-.045em;margin:0 0 9px;line-height:1.12}
-.card-details p{font-size:14px;line-height:1.65;margin:0 0 13px;color:#4f4d48;min-height:70px}
-.benefit{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:800;margin:3px 0 20px}
-.card-link{display:inline-block;border-bottom:1.5px solid var(--ink);padding-bottom:4px;font-size:13px;font-weight:800;background:none;border-top:none;border-left:none;border-right:none}
-.card-link:hover{color:var(--red);border-color:var(--red)}
-.img-tanchen{background:#e9e9e7}
-.img-tanchen img{object-fit:cover}
-.card-art{height:100%;width:100%;display:grid;place-items:center}
-.paper-art{background:#e5cbea;position:relative}
-.paper-art:before{content:"";position:absolute;width:59%;height:70%;background:#fff9e8;transform:rotate(-12deg);box-shadow:12px 12px 0 #c09cd9;border:1px solid var(--ink)}
-.paper-art:after{content:"✿\A  for you";white-space:pre;position:relative;z-index:2;font-family:"Fraunces",Georgia,serif;font-size:45px;text-align:center;line-height:1.4;color:#e36a55;transform:rotate(-12deg)}
-.lino-art{background:#e6ad8a;position:relative}
-.lino-art:before{content:"";position:absolute;width:63%;height:65%;background:#ffe7bb;border:12px solid #343c38;transform:rotate(9deg);box-shadow:14px 15px 0 #bd7a57}
-.lino-art:after{content:"❋";position:relative;color:#235f50;font-size:180px;line-height:1;transform:rotate(-12deg)}
-.mid-banner{background:var(--yellow);padding:35px 0;border-bottom:1px solid var(--ink);text-align:center}
-.mid-banner p{font-family:"Fraunces",Georgia,serif;font-size:clamp(25px,3vw,39px);letter-spacing:-.04em;margin:0}
-.shop{background:var(--green);border-bottom:1px solid var(--ink)}
-.product-visual{height:340px;border-radius:15px;position:relative;overflow:hidden;border:1px solid var(--ink);display:grid;place-items:center}
-.product-visual .flag{position:absolute;top:14px;left:14px;background:var(--cream);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;border-radius:30px;border:1px solid var(--ink);z-index:2}
-.kit-graphic{position:relative;width:190px;height:222px;border:2px solid var(--ink);background:var(--cream);border-radius:8px;transform:rotate(-7deg);box-shadow:12px 14px 0 rgba(38,37,31,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px}
-.kit-graphic:before{content:"HILDE'S CLUBHUIS";font-size:9px;letter-spacing:.12em;font-weight:800;position:absolute;top:21px}
-.kit-graphic b{font-family:"Fraunces",Georgia,serif;text-align:center;font-size:31px;line-height:1.04;letter-spacing:-.05em}
-.kit-graphic .graphic-symbol{font-size:57px;line-height:1}
-.kit-graphic:after{content:"DIY KIT • MET LIEFDE";font-size:9px;letter-spacing:.12em;font-weight:800;position:absolute;bottom:20px}
-.kit-card{background:#d9c8ee}
-.kit-key{background:#ffe0a0}
-.kit-lino{background:#c6d9f1}
-.shop .card-details p{min-height:53px}
-.shop .card-details .eyebrow{font-size:10px;letter-spacing:.10em;margin-bottom:10px}
-.shop-note{font-size:12px;opacity:.75;margin-top:26px}
-.about{background:var(--paper);overflow:hidden}
-.about-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:70px;align-items:center}
-.about-art{height:470px;background:var(--lilac);border-radius:46% 54% 46% 51%;display:flex;align-items:center;justify-content:center;position:relative}
-.about-art .poster{width:64%;min-height:65%;background:var(--yellow);border:2px solid var(--ink);transform:rotate(-8deg);box-shadow:11px 11px 0 var(--red);display:flex;align-items:center;justify-content:center;padding:25px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:50px;font-weight:700;line-height:1;letter-spacing:-.07em}
-.about-art .stamp{position:absolute;right:0;top:15px;background:var(--red);border:2px solid var(--ink);border-radius:50%;height:120px;width:120px;display:grid;place-items:center;font-weight:800;text-align:center;font-size:13px;transform:rotate(12deg)}
-.about-copy h2{font-size:clamp(45px,5vw,75px);line-height:1.04;margin:12px 0 25px}
-.about-copy p{font-size:18px;line-height:1.65;max-width:515px}
-.about-copy .pill{margin-top:16px}
-footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
-.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-bottom:78px}
-.footer-big{font-family:"Fraunces",Georgia,serif;font-size:clamp(40px,5vw,70px);line-height:1.03;letter-spacing:-.05em;margin:0}
-.footer-side{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:16px}
-.footer-side p{font-size:16px;max-width:320px;line-height:1.5;margin:0}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:22px;display:flex;justify-content:space-between;gap:25px;font-size:11px;opacity:.8;line-height:1.6}
-.footer-bottom a{text-decoration:underline}
-.modal[hidden]{display:none}
-.modal{position:fixed;inset:0;z-index:100;background:rgba(22,22,19,.58);display:flex;align-items:center;justify-content:center;padding:20px}
-.modal-content{max-width:530px;width:100%;max-height:90vh;overflow:auto;background:var(--paper);border:2px solid var(--ink);border-radius:19px;box-shadow:12px 12px 0 var(--red);padding:38px 35px;position:relative}
-.modal-content h2{font-family:"Fraunces",Georgia,serif;font-size:43px;line-height:1.08;letter-spacing:-.05em;margin:15px 0}
-.modal-content p{line-height:1.6;margin:0 0 14px}
-.modal-content ul{line-height:1.85;padding-left:21px}
-.modal-close{position:absolute;top:15px;right:15px;border:1.5px solid var(--ink);background:var(--yellow);border-radius:50%;width:36px;height:36px;font-size:22px}
-.modal-note{background:var(--yellow);padding:15px;border-radius:10px;font-size:13px;margin-top:24px;font-weight:700}
-@media(max-width:1050px){.container{padding:0 27px}.hero-grid{grid-template-columns:53% 47%}.hero h1{font-size:clamp(59px,7vw,80px)}.hero-art{min-height:570px}.studio-split{gap:35px}.visual{height:305px}.product-visual{height:300px}.about-grid{gap:35px}}
-@media(max-width:760px){.container{padding:0 20px}.announcement{font-size:9px;padding:9px 8px}.nav-inner{height:70px}.brand{font-size:24px}.brand-flower{font-size:30px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);padding:24px 20px;border-bottom:1px solid var(--ink);flex-direction:column;align-items:stretch;gap:20px}.navlinks.open{display:flex}.navlinks .pill{align-self:flex-start}.hero-grid{display:flex;flex-direction:column;min-height:auto}.hero-text{padding:62px 0 30px}.hero h1{font-size:clamp(60px,14vw,90px)}.hero p{font-size:17px}.hero-art{min-height:460px;margin:0 -12px}.hero-art:before{inset:30px 0 30px 20px}.photo-frame{left:18%;top:9%;width:66%;height:68%}.float-note{right:0;top:6%;width:105px;height:105px;font-size:17px}.float-card{left:3%;bottom:9%;padding:17px;font-size:25px}.hero-spark{right:1%;font-size:65px}.photo-credit{right:4%;bottom:8px;font-size:9px}.ticker p{font-size:10px}.section{padding:74px 0 76px}.section-heading{display:block;margin-bottom:32px}.section-heading h2{font-size:clamp(49px,10vw,68px);margin-bottom:19px}.section-heading p{font-size:16px}.studio-split,.about-grid{grid-template-columns:1fr;gap:35px}.studio-side h3{font-size:31px}.studio-perks{margin-top:20px}.date-row{grid-template-columns:75px 1fr auto;gap:15px;padding:18px 0}.date-tile strong{font-size:29px}.date-copy h4{font-size:17px}.date-copy p{font-size:12px}.round-arrow{width:38px;height:38px}.workshop-grid,.shop-grid{grid-template-columns:1fr;gap:38px}.visual{height:360px}.product-visual{height:330px}.card-details p,.shop .card-details p{min-height:auto}.mid-banner p{font-size:26px}.about-art{height:390px;order:2}.about-copy{order:1}.about-art .poster{font-size:42px}.footer-grid{grid-template-columns:1fr;gap:26px;margin-bottom:55px}.footer-side{align-items:flex-start}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:10px}}
-@media(max-width:400px){.hero h1{font-size:57px}.hero-art{min-height:390px}.photo-frame{height:65%;}.visual{height:310px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-
-.hero-art:before{background:#d7c4e7;inset:42px -70px 44px 14px}
-.hero-art .studio-photo{width:84%;height:76%;left:10%;top:10%;border:10px solid white;border-radius:13px;transform:rotate(2deg);box-shadow:10px 14px 0 var(--ink)}
-.hero-art .studio-photo img{object-position:center}
-.hero-art .float-note{right:-2%;top:5%;width:123px;height:123px;font-size:18px;background:var(--yellow);transform:rotate(9deg)}
-.hero-art .float-card{bottom:7%;left:1%;font-size:29px;background:var(--red);transform:rotate(-5deg)}
-@media(max-width:760px){.hero-art .studio-photo{width:84%;height:74%;left:8%;top:10%}.hero-art .float-card{left:3%;bottom:8%;font-size:23px}.hero-art .float-note{width:96px;height:96px;font-size:14px;right:1%}}
-
-
-/* DIY webshop: keep the editorial style but make products unmistakably shoppable */
-.shop{background:#f5f0e3}
-.shop-intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;padding-bottom:45px}
-.shop-intro h2{font-size:clamp(52px,5vw,75px);line-height:1.02;margin:12px 0 0}
-.shop-intro-copy{border-left:1px solid var(--ink);padding-left:38px}
-.shop-kicker{display:inline-block;background:var(--yellow);padding:8px 14px;border:1px solid var(--ink);border-radius:99px;text-transform:uppercase;font-size:10px;letter-spacing:.09em;font-weight:800}
-.shop-intro-copy h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.045em;font-size:clamp(27px,3vw,43px);line-height:1.13;margin:17px 0 13px}
-.shop-intro-copy p{font-size:15px;line-height:1.65;max-width:490px;margin:0 0 16px}
-.shop-promises{display:flex;flex-wrap:wrap;gap:7px 16px;font-size:11px;font-weight:800}
-.shop-toolbar{border-top:1.5px solid var(--ink);padding:21px 0;display:flex;align-items:center;justify-content:space-between}
-.shop-count{font-size:12px;color:#57544d;font-weight:700}
-.shop-grid{gap:20px}
-.shop-product{background:var(--cream);border:1px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:4px 5px 0 rgba(38,37,31,.07)}
-.shop-product-image{height:340px;background:#e7decf;position:relative;border-bottom:1px solid var(--hair)}
-.shop-product-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
-.shop-product:hover .shop-product-image img{transform:scale(1.045)}
-.shop-tag{position:absolute;z-index:2;top:16px;left:16px;background:var(--cream);border:1px solid var(--ink);border-radius:99px;padding:9px 12px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-.shop-product-info{padding:24px 22px;display:flex;flex-direction:column;flex:1}
-.product-small{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#6d675c}
-.shop-product h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.04em;font-size:29px;line-height:1.1;margin:10px 0 10px}
-.shop-product p{font-size:14px;line-height:1.6;color:#555149;margin:0 0 22px;flex:1}
-.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:11px;border-top:1px solid var(--hair);padding-top:18px}
-.product-price{font-size:22px;line-height:1.1;display:block;font-weight:800;white-space:nowrap}
-.product-price-note{font-size:10px;color:#675f54}
-.shop-buy{border:1px solid var(--ink);border-radius:99px;background:var(--ink);color:#fff;padding:12px 15px;font-size:12px;font-weight:800;white-space:nowrap;transition:background .2s,transform .2s}
-.shop-buy:hover{background:var(--red);color:var(--ink);transform:translateY(-2px)}
-.shop-details{border:none;border-bottom:1px solid var(--ink);background:transparent;font-size:12px;font-weight:800;margin-top:20px;align-self:flex-start;padding:0 0 4px}
-.shop-endnote{margin-top:36px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:22px;letter-spacing:-.02em}
-@media(max-width:1050px){.shop-intro{gap:25px}.shop-intro-copy{padding-left:25px}.shop-product-image{height:280px}.shop-buy{padding:10px;font-size:11px}.product-price{font-size:19px}}
-@media(max-width:760px){.shop-intro{grid-template-columns:1fr;gap:22px}.shop-intro h2{font-size:57px}.shop-intro-copy{border-left:none;border-top:1px solid var(--ink);padding:25px 0 0}.shop-grid{gap:20px}.shop-product-image{height:340px}.shop-product-info{padding:24px}.shop-endnote{font-size:19px}}
-
-.nav-cart{border:1px solid var(--ink);background:var(--cream);border-radius:99px;display:inline-flex;align-items:center;gap:8px;padding:9px 13px;font-size:19px;line-height:1}
-.nav-cart span{display:inline-grid;place-items:center;border-radius:50%;background:var(--red);min-width:20px;height:20px;padding:0 4px;font-weight:800;font-size:11px}
-.cart-overlay[hidden],.cart-panel[hidden]{display:none}
-.cart-overlay{position:fixed;inset:0;background:rgba(25,24,22,.55);z-index:99}
-.cart-panel{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:100;background:var(--paper);border-left:2px solid var(--ink);display:flex;flex-direction:column;box-shadow:-12px 0 30px rgba(0,0,0,.15)}
-.cart-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:27px 25px;border-bottom:1px solid var(--ink)}
-.cart-top h2{font-family:"Fraunces",Georgia,serif;letter-spacing:-.04em;margin:3px 0 0;font-size:35px}
-.cart-close{background:var(--yellow);width:38px;height:38px;border:1px solid var(--ink);border-radius:50%;font-size:22px}
-.cart-items{padding:18px 24px;overflow:auto;flex:1}
-.cart-item{display:grid;grid-template-columns:78px 1fr;gap:15px;border-bottom:1px solid var(--hair);padding:16px 0}
-.cart-item img{width:78px;height:82px;object-fit:cover;border:1px solid var(--ink);border-radius:7px}
-.cart-item h3{font-size:15px;margin:0 0 8px}
-.cart-item p{font-size:13px;margin:0 0 9px}
-.qty-controls{display:flex;align-items:center;gap:10px}
-.qty-controls button{width:26px;height:26px;border:1px solid var(--ink);background:transparent;border-radius:50%}
-.cart-empty{line-height:1.6;color:#5c5952;padding:24px 0}
-.cart-footer{padding:24px;border-top:1px solid var(--ink)}
-.cart-total{display:flex;justify-content:space-between;font-size:17px;font-weight:800;margin-bottom:13px}
-.cart-caption{font-size:12px;line-height:1.55;color:#5d5952;margin:0 0 17px}
-.cart-continue{width:100%}
-@media(max-width:760px){.nav-cart{align-self:flex-start}}
-
-@media(max-width:1120px) and (min-width:931px){.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .pill{padding:10px 12px;min-height:42px}}
-@media(max-width:930px) and (min-width:761px){.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:var(--paper);padding:24px 27px;border-bottom:1px solid var(--ink);flex-direction:column;align-items:stretch;gap:20px}.navlinks.open{display:flex}.navlinks .pill,.navlinks .nav-cart{align-self:flex-start}}
-
-/* Hilde's palette: exuberant blues and greens, with pink/lilac accents.
-   Playful, handmade, and editorial; no yellow backgrounds. */
-:root{
- --paper:#f5f8f4;
- --cream:#fffdf8;
- --ink:#1c383a;
- --red:#f5a0b8;
- --yellow:#9cddc6;
- --lilac:#d8cff5;
- --blue:#b8dafa;
- --green:#c0e3d5;
- --hair:rgba(28,56,58,.19);
- --cobalt:#3354b8;
- --teal:#12796f;
- --pink:#f5a0b8;
- --mint:#9cddc6
-}
-body{background:var(--paper)}
-nav{background:rgba(245,248,244,.96)}
-::selection{background:#b6e2d4;color:var(--ink)}
-.announcement{background:var(--cobalt);color:#fff;border-bottom:1px solid var(--ink)}
-.brand{color:var(--ink)}
-.brand-flower{color:var(--teal);filter:drop-shadow(4px 3px 0 #eaa4cd);transform:rotate(-12deg)}
-.navlinks a:hover{color:var(--cobalt)}
-.pill{background:var(--cobalt);border-color:var(--ink);color:#fff;box-shadow:3px 4px 0 rgba(28,56,58,.12)}
-.pill.coral{background:var(--teal);color:#fff}
-.pill.coral:hover,.pill:hover{background:var(--cobalt);color:#fff}
-.pill.light{background:#fffdf8;color:var(--ink)}
-.pill.light:hover{background:var(--lilac);color:var(--ink)}
-.hero{background:
- radial-gradient(circle at 11% 75%,rgba(181,228,214,.57),transparent 33%),
- radial-gradient(circle at 70% 12%,rgba(209,210,253,.45),transparent 37%),
- var(--paper)}
-.hero h1 em{color:var(--cobalt);text-decoration-line:underline;text-decoration-style:wavy;text-decoration-color:#89c5b8;text-decoration-thickness:5px;text-underline-offset:9px}
-.hero-kicker .dot{background:var(--teal)}
-.hero-art:before{background:#b0dce1;border-radius:47% 53% 45% 55%;transform:rotate(-13deg)}
-.hero-art .float-note{background:var(--pink);color:var(--ink);box-shadow:3px 6px 0 var(--cobalt);border-radius:46% 54% 52% 48%}
-.hero-art .float-card{background:var(--lilac);color:var(--ink);box-shadow:6px 6px 0 var(--cobalt)}
-.ticker{background:var(--teal);color:#fff}
-.open-studio{background:linear-gradient(120deg,#b9e2d6 0%,#d2e7e5 52%,#c4dcf5 100%);position:relative}
-.open-studio::before{content:"✿";position:absolute;right:3%;top:26px;font:normal 95px/1 "Fraunces",Georgia,serif;color:rgba(46,117,127,.13);transform:rotate(18deg);pointer-events:none}
-.date-tile{background:#f6fbff;box-shadow:3px 4px 0 rgba(46,117,127,.15);border-radius:16px}
-.date-row:nth-child(2) .date-tile{background:#d5f1e5}
-.date-row:nth-child(3) .date-tile{background:#e3ddfa}
-.round-arrow{background:var(--cobalt);color:#fff;border-color:var(--ink)}
-.round-arrow:hover{background:var(--teal)}
-.workshops{background:#fbfcfa}
-.workshop-grid .item-card:nth-child(1) .visual{border-bottom:5px solid var(--teal)}
-.workshop-grid .item-card:nth-child(2) .visual{border-bottom:5px solid #a798d9}
-.workshop-grid .item-card:nth-child(3) .visual{border-bottom:5px solid var(--cobalt)}
-.workshops .card-details h3{color:var(--ink)}
-.workshops .card-link:hover{color:var(--cobalt);border-color:var(--cobalt)}
-.paper-art{background:#d7ddfb}
-.paper-art:before{background:#f8fff9;box-shadow:12px 12px 0 #a9bfe6}
-.paper-art:after{color:#3f69a6}
-.lino-art{background:#9dd4c5}
-.lino-art:before{background:#d4f1e2;border-color:#286c6c;box-shadow:14px 15px 0 #5ca994}
-.lino-art:after{color:#426cae}
-.mid-banner{background:#d2d0f6;border-bottom:1px solid var(--ink)}
-.mid-banner p{color:var(--ink)}
-.shop{background:radial-gradient(circle at 8% 12%,#d4e9fc 0,transparent 27%),linear-gradient(150deg,#cee9df 0%,#e5f0ec 58%,#dce6fa 100%)}
-.shop-kicker{background:var(--lilac)}
-.shop-intro-copy h3{color:#244e78}
-.shop-promises span::first-letter{color:var(--teal)}
-.shop-product{background:#fffefd;border-radius:19px;box-shadow:5px 7px 0 rgba(51,84,184,.1);transition:transform .25s}
-.shop-product:hover{transform:translateY(-4px)}
-.shop-product-image{background:#d4e6eb}
-.shop-product:nth-child(1) .shop-tag{background:#eee4fb}
-.shop-product:nth-child(2) .shop-tag{background:#e0f1e8}
-.shop-product:nth-child(3) .shop-tag{background:#dce9fb}
-.shop-product h3{color:var(--ink)}
-.shop-buy{background:var(--teal);color:#fff;border-color:var(--ink)}
-.shop-buy:hover{background:var(--cobalt);color:#fff}
-.product-price{color:var(--cobalt)}
-.shop-endnote{color:#274f6c}
-.about{background:#f6f9f4}
-.about-art{background:#c8dff1}
-.about-art .poster{background:#b4e1d2;box-shadow:11px 11px 0 var(--cobalt);border-radius:9px}
-.about-art .stamp{background:#edb0ce}
-.about-copy h2 em{color:var(--cobalt)}
-footer{background:#163b55;color:#f8fcf9}
-.nav-cart{background:#d4e6f6}
-.nav-cart span{background:#f3a3c0;color:var(--ink)}
-.cart-close,.modal-close{background:var(--lilac)}
-.modal-content{box-shadow:12px 12px 0 var(--cobalt)}
-.modal-note{background:#d8ecdf}
-.cart-panel{background:#f6fbf7}
-.cart-item img{background:#e6f0ef}
-.shop-details:hover{color:var(--cobalt);border-color:var(--cobalt)}
-/* Gentle hand-drawn flourishes instead of busy decorative patterns */
-.section-heading h2:after{content:"✳";display:inline-block;vertical-align:top;font:normal 27px/1 Arial,sans-serif;color:var(--teal);margin:0 0 0 14px;transform:rotate(15deg)}
-.workshops .section-heading h2:after{color:#b088c8}
-.shop-intro h2:after{content:"✿";display:inline-block;vertical-align:top;font:normal 33px/1 Georgia,serif;color:var(--teal);margin-left:14px;transform:rotate(-16deg)}
-@media(max-width:760px){
- .open-studio::before{font-size:64px;right:0;top:18px}
- .section-heading h2:after{font-size:19px;margin-left:8px}
- .shop-intro h2:after{font-size:24px;margin-left:8px}
- .shop-product:hover{transform:none}
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#faf7ef">
+<meta name="description" content="Hilde's Clubhuis: vrij knutselen, creatieve workshops, koffie & taart en complete DIY-pakketjes.">
+<title>Hilde's Clubhuis — Een plek om iets te maken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./clubhuis.css">
 </head>
 <body>
-<div class="announcement">✳ &nbsp; Een kleurrijk clubhuis voor creatieve vingers en koffiedrinkers &nbsp; ✳</div>
-<nav aria-label="Hoofdnavigatie"><div class="container nav-inner">
-<a href="#boven" class="brand" aria-label="Hilde's Clubhuis home"><span>hilde's<small>clubhuis</small></span><span class="brand-flower">✳</span></a>
-<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-<div class="navlinks" id="navlinks"><a href="#vrij-knutselen">Vrij knutselen</a><a href="#workshops">Workshops</a><a href="#shop">Webshop</a><a href="#over">Over Hilde</a><a class="pill" href="#vrij-knutselen">Bekijk de agenda <span>↗</span></a><button type="button" class="nav-cart" id="cartOpen" aria-label="Open winkelmandje">🛍 <span id="cartBadge">0</span></button></div>
-</div></nav>
+<div class="mini-bar">Knutselen mag gezellig zijn ✳ Koffie erbij, taart erbij, niks moet</div>
+<header class="header">
+  <div class="container header-inner">
+    <a href="#boven" class="brand" aria-label="Hilde's Clubhuis, naar het begin">
+      <span class="brand-type">hilde's<span>clubhuis</span></span>
+      <svg class="brand-flower" viewBox="0 0 100 100" aria-hidden="true"><path d="M49 4Q59 26 54 38Q79 10 92 23Q99 34 65 49Q96 51 93 67Q85 80 61 60Q78 91 59 96Q47 96 48 68Q32 98 19 87Q8 74 36 55Q2 59 4 40Q10 26 38 41Q23 12 39 6Z"/><circle cx="49" cy="51" r="13"/></svg>
+    </a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">☰</button>
+    <nav id="navLinks" class="nav-links" aria-label="Hoofdnavigatie">
+      <a href="#vrij-knutselen">Vrij knutselen</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#pakketjes">Pakketjes</a>
+      <a href="#over">Over Hilde</a>
+      <a href="#vrij-knutselen" class="btn btn-white">Bekijk de agenda <span aria-hidden="true">↗</span></a>
+      <button id="cartOpen" type="button" class="nav-cart" aria-label="Open winkelmandje">Tas <span class="cart-qty" id="cartBadge">0</span></button>
+    </nav>
+  </div>
+</header>
 <main id="boven">
-<section class="hero"><div class="container hero-grid">
-<div class="hero-text"><div class="hero-kicker eyebrow"><span class="dot"></span> Welkom bij Hilde's Clubhuis</div>
-<h1 class="display">Maak maar <em>iets</em> moois.</h1>
-<p>Een plek om te knutselen, bij te leren, gezellig te babbelen en vooral: niet te denken aan de afwas thuis. De koffie staat al bijna klaar.</p>
-<div class="hero-actions"><a class="pill coral" href="#vrij-knutselen">Kom vrij knutselen <span>↗</span></a><a class="pill light" href="#workshops">Ontdek de workshops <span>↗</span></a></div>
-</div>
-<div class="hero-art"><div class="photo-frame studio-photo"><img src="https://images.unsplash.com/photo-1770992255800-5def9e29b650?auto=format&fit=crop&w=1400&q=82" alt="Een warm creatief atelier met materialen en werktafels" loading="eager" /></div><div class="float-note">gezellig<br/>aan de<br/>knutseltafel</div><div class="float-card">Knippen.<br/>Plakken.<br/>Genieten.</div></div></div></section>
-<div class="ticker"><p>✳ &nbsp; Met je handen, met je hoofd uit &nbsp; ✳ &nbsp; Voor beginners en enthousiastelingen &nbsp; ✳ &nbsp; Met koffie en iets lekkers &nbsp; ✳</p></div>
-<section class="section open-studio" id="vrij-knutselen"><div class="container">
-<div class="section-heading"><div><span class="eyebrow">01 / Schuif gezellig aan</span><h2 class="display">Vrij knutselen.<br/><em>Jij kiest wat.</em></h2></div><p>Een vrije namiddag om eindelijk dat ene project af te maken. Of om gewoon iets nieuws te proberen. Zonder vaste opdracht, zonder prestatiedruk.</p></div>
-<div class="studio-split"><div class="studio-side"><h3 class="display">Neem je goesting mee. De rest komt wel.</h3><p>Breng je eigen knutselmateriaal mee of snuister tussen de materialen die je ter plaatse kan kopen. Zoek een plekje aan tafel en maak waar jij zin in hebt.</p><ul class="studio-perks"><li><span class="perk-icon">✂</span> Eigen materialen welkom</li><li><span class="perk-icon">✿</span> Knutselmateriaal ter plaatse te koop</li><li><span class="perk-icon">☕</span> Koffie en taart verkrijgbaar</li></ul></div>
-<div><div class="date-list">
-<div class="date-row"><div class="date-tile"><strong>22</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Een zondag vol geknutsel</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="0" aria-label="Bekijk zondag 22 november">↗</button></div>
-<div class="date-row"><div class="date-tile"><strong>29</strong><span>ZO NOV</span></div><div class="date-copy"><h4>Knutselen & koffie</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="1" aria-label="Bekijk zondag 29 november">↗</button></div>
-<div class="date-row"><div class="date-tile"><strong>06</strong><span>ZO DEC</span></div><div class="date-copy"><h4>Een middag voor jezelf</h4><p>14:00–17:00 · Vrij atelier</p></div><button class="round-arrow detail-btn" data-kind="date" data-id="2" aria-label="Bekijk zondag 6 december">↗</button></div>
-</div><p class="fine-print">De data en praktische afspraken worden nog bevestigd.</p></div></div>
-</div></section>
-<section class="section workshops" id="workshops"><div class="container">
-<div class="section-heading"><div><span class="eyebrow">02 / Samen iets nieuws leren</span><h2 class="display">Workshops waar je<br/><em>blij van wordt.</em></h2></div><p>Je leert een nieuwe techniek, maakt iets met je eigen handen en gaat naar huis met iets waar je trots op bent. Inclusief onbeperkt koffie, thee en taart. Ja, écht.</p></div>
-<div class="workshop-grid">
-<article class="item-card"><div class="visual img-tanchen"><span class="flag">Kralen & kleur</span><img src="https://tanchenstudio.com/cdn/shop/files/TANCHEN_PET-NAT_PET_PULPO_2_0334fca9-6593-42c3-a366-a82142ae5e2f_900x.jpg?v=1737285571" alt="Kralensleutelhanger van Tanchen Studio" loading="lazy" /></div><div class="card-details"><h3>Maak je eigen sleutelhanger</h3><p>Leer hoe je kralen combineert, kleuren kiest en een unieke sleutelhanger samenstelt. Van eerste kraal tot laatste knoop.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="0">Ontdek deze workshop ↗</button></div></article>
-<article class="item-card"><div class="visual"><span class="flag">Papier & plezier</span><div class="card-art paper-art" role="img" aria-label="Grafische illustratie van een zelfgemaakte wenskaart"></div></div><div class="card-details"><h3>Kaartjes om te koesteren</h3><p>Leer spelen met papier, kleuren, compositie en kleine details. Maak kaartjes die eigenlijk te mooi zijn om weg te geven.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="1">Ontdek deze workshop ↗</button></div></article>
-<article class="item-card"><div class="visual"><span class="flag">Inkt & indruk</span><div class="card-art lino-art" role="img" aria-label="Grafische illustratie van een linoprint met bloemmotief"></div></div><div class="card-details"><h3>Linodruk voor beginners</h3><p>Van schets tot druk: ontdek hoe je een eigen stempel snijdt en een kleine reeks prints maakt. Lekker met je handen bezig.</p><span class="benefit">☕ &nbsp; Onbeperkt koffie, thee & taart</span><br/><button class="card-link detail-btn" data-kind="workshop" data-id="2">Ontdek deze workshop ↗</button></div></article>
-</div><p class="fine-print">Workshopdata en tarieven worden binnenkort bekendgemaakt.</p>
-</div></section>
-<div class="mid-banner"><div class="container"><p>✳ &nbsp; Je hoeft niet creatief te zijn. Je moet gewoon beginnen. &nbsp; ✳</p></div></div>
-<section class="section shop" id="shop"><div class="container">
-<div class="shop-intro">
- <div><span class="eyebrow">03 / Het clubhuis bij jou thuis</span><h2 class="display">De mini<br/><em>knutselwinkel.</em></h2></div>
- <div class="shop-intro-copy"><span class="shop-kicker">✳ DIY-pakketjes om blij van te worden</span>
-  <h3>Alles in 1 pakket.<br/>Exact wat je nodig hebt.</h3>
-  <p>Materialen, creatieve goesting én een duidelijke handleiding: alles zit samen in één mooi ingepakte doos. Je hoeft alleen nog een plekje aan tafel te zoeken.</p>
-  <div class="shop-promises"><span>✓ Alle materialen</span><span>✓ Stap-voor-stap uitleg</span><span>✓ Leuk om cadeau te doen</span></div>
+<section class="hero">
+ <div class="container hero-inner">
+  <div class="hero-copy">
+    <span class="hero-overline">✳ Welkom bij Hilde's Clubhuis</span>
+    <h1 class="hero-title">Met je handen.<br><span class="alt">Met plezier.</span></h1>
+    <p class="hero-lead">Een kleurrijke plek voor mensen die graag iets maken. Kom langs om te knutselen, leer iets nieuws tijdens een workshop of haal een doos vol creatieve goesting in huis.</p>
+    <div class="hero-actions"><a class="btn btn-ink" href="#workshops">Ontdek de workshops <span class="big-arrow">↗</span></a><a class="btn btn-white" href="#vrij-knutselen">Kom vrij knutselen <span class="big-arrow">↗</span></a></div>
+  </div>
+  <div class="hero-stage" aria-label="Beelden uit de creatieve wereld van Hilde's Clubhuis">
+    <span class="hero-asterisk" aria-hidden="true">✳</span>
+    <div class="photo-polaroid hero-main-photo"><img id="momCraftPhoto" src="assets/workshop-kaartjes.svg" alt="Hilde aan de knutseltafel met schildermateriaal"><span class="polaroid-caption">de handen uit de mouwen ♡</span></div>
+    <div class="photo-polaroid hero-photo-two"><img id="momSmilePhoto" src="assets/workshop-sleutelhanger.svg" alt="Hilde tijdens een gezellig creatief moment"><span class="polaroid-caption">en de koffie aan</span></div>
+    <div class="hero-sticker">Kom maar<br>mee<br>knutselen!</div>
+    <div class="hero-swish">Geen ervaring nodig. Wel goesting.</div>
+  </div>
  </div>
+</section>
+<div class="feature-strip" aria-label="Dit kan je bij Hilde's Clubhuis doen">
+  <div class="feature"><span class="feature-symbol" aria-hidden="true">✂</span><div><h2>Vrij knutselen</h2><p>Schuif aan, breng je eigen project mee of ontdek iets nieuws.</p></div></div>
+  <div class="feature"><span class="feature-symbol" aria-hidden="true">✿</span><div><h2>Workshops</h2><p>Van lino en kaartjes tot vrolijke kralen. Met iets lekkers erbij.</p></div></div>
+  <div class="feature"><span class="feature-symbol" aria-hidden="true">♡</span><div><h2>Leuke pakketjes</h2><p>Alles in één doos. Voor jezelf, of als cadeau voor een maker.</p></div></div>
 </div>
-<div class="shop-toolbar"><span class="eyebrow">Ontdek onze DIY-pakketten</span><span class="shop-count">3 producten</span></div>
-<div class="shop-grid"><article class="shop-product">
- <div class="shop-product-image"><span class="shop-tag">Creatief cadeau</span><img src="assets/pakket-cards.svg" alt="Cadeaudoos met strik, wenskaarten en knutselmateriaal" loading="lazy" /></div>
- <div class="shop-product-info"><div class="product-small">01 / Papier & plezier</div><h3>Het kaartjespakket</h3><p>Maak je eigen bijzondere kaartjes met mooi papier, vrolijke details en een handige handleiding.</p>
- <div class="product-bottom"><div><strong class="product-price">€ 24,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="0">+ In winkelmandje</button></div>
- <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="0">Wat zit er in het pakket? ↗</button></div>
-</article>
-<article class="shop-product">
- <div class="shop-product-image"><span class="shop-tag">Leuk voor beginners</span><img src="assets/pakket-key.svg" alt="Cadeaudoos met strik, kralen en sleutelhangeronderdelen" loading="lazy" /></div>
- <div class="shop-product-info"><div class="product-small">02 / Kralen & kleur</div><h3>Het sleutelhangerpakket</h3><p>Rijg, combineer en maak je eigen unieke sleutelhanger met kralen in leuke kleuren.</p>
- <div class="product-bottom"><div><strong class="product-price">€ 19,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="1">+ In winkelmandje</button></div>
- <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="1">Wat zit er in het pakket? ↗</button></div>
-</article>
-<article class="shop-product">
- <div class="shop-product-image"><span class="shop-tag">Inkt & indruk</span><img src="assets/pakket-lino.svg" alt="Cadeaudoos met strik, linosnijmaterialen en prints" loading="lazy" /></div>
- <div class="shop-product-info"><div class="product-small">03 / Linodruk</div><h3>Het linopakket</h3><p>Van eerste schets naar je eigen print. Ontdek linodruk met een complete creatieve startersset.</p>
- <div class="product-bottom"><div><strong class="product-price">€ 29,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="2">+ In winkelmandje</button></div>
- <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="2">Wat zit er in het pakket? ↗</button></div>
-</article></div>
-<div class="shop-endnote">✳ &nbsp; Inpakken doen we met liefde. Uitpakken mag met enthousiasme.</div>
-</div></section>
-<section class="section about" id="over"><div class="container about-grid">
-<div class="about-art"><div class="poster">meer<br/>maken.<br/>minder<br/>moeten.</div><div class="stamp">MET LIEFDE<br/>EN VEEL<br/>GEPRUTS ✳</div></div>
-<div class="about-copy"><div class="eyebrow">Welkom in het clubhuis</div><h2 class="display">Een plek voor<br/><em>de makers.</em></h2><p>Bij Hilde's Clubhuis hoeft creativiteit niet moeilijk te zijn. Waar je aan tafel schuift, wat probeert, misschien iets opnieuw doet en ondertussen gezellig bijpraat.</p><p>Of je nu voor het eerst een guts vasthebt of al jaren knutselt: trek een stoel bij. Hier draait het om plezier in het maken.</p><a class="pill coral" href="#vrij-knutselen">Schuif maar aan ↗</a></div>
-</div></section>
+<section class="section studio" id="vrij-knutselen">
+ <div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">01 / Het vrije atelier</span><h2>Kom erbij.<br><span class="serif scribble">Maak maar wat.</span></h2></div>
+    <p>Een middag zonder haast. Een tafel vol ideeën. Een kop koffie die koud mag worden omdat je zo lekker bezig bent.</p>
+  </div>
+  <div class="studio-layout">
+   <div class="studio-photo"><img id="momStudioPhoto" src="assets/workshop-kaarsenhouder.svg" alt="Hilde's creatieve atelier"><div class="round-sticker">Schuif<br>maar<br>aan! ✳</div></div>
+   <div class="studio-copy">
+    <h3>Je hoeft niet te weten wat je maakt. Alleen dat je zin hebt om te beginnen.</h3>
+    <p>Neem je eigen knutselmateriaal mee of koop ter plaatse iets leuks om uit te proberen. Je kiest zelf waar je aan werkt, hoe lang je bezig bent en of je ondertussen nog een stukje taart neemt.</p>
+    <div class="studio-perks"><span>✂ Eigen materiaal welkom</span><span>✿ Materiaal ter plaatse</span><span>☕ Koffie & taart verkrijgbaar</span></div>
+    <div class="agenda-list" aria-label="Voorgestelde vrije ateliermomenten">
+      <div class="agenda-row"><div class="agenda-date"><b>22</b><small>NOV</small></div><div><h4>Zondag aan de knutseltafel</h4><p>14:00 – 17:00 · Voorgestelde datum</p></div><button class="circle-link info-btn" data-kind="date" data-id="0" aria-label="Meer over 22 november">↗</button></div>
+      <div class="agenda-row"><div class="agenda-date"><b>29</b><small>NOV</small></div><div><h4>Knutselen & koffie</h4><p>14:00 – 17:00 · Voorgestelde datum</p></div><button class="circle-link info-btn" data-kind="date" data-id="1" aria-label="Meer over 29 november">↗</button></div>
+      <div class="agenda-row"><div class="agenda-date"><b>06</b><small>DEC</small></div><div><h4>Even tijd voor jezelf</h4><p>14:00 – 17:00 · Voorgestelde datum</p></div><button class="circle-link info-btn" data-kind="date" data-id="2" aria-label="Meer over 6 december">↗</button></div>
+    </div>
+    <p class="agenda-foot">Deze atelierdata zijn ideeën. De definitieve agenda wordt nog bevestigd.</p>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="section workshops" id="workshops">
+ <div class="container">
+  <div class="section-head">
+    <div><span class="eyebrow">02 / Samen iets leren</span><h2>Een tafel vol <span class="serif">ideeën.</span> <span class="workshop-heading-decoration" aria-hidden="true">✳</span></h2></div>
+    <p>Voor wie graag iets nieuws probeert, iets moois maakt en daarna trots naar huis gaat. Inclusief onbeperkt koffie, thee en taart. Jazeker.</p>
+  </div>
+  <div class="workshop-grid">
+   <article class="workshop-card">
+    <div class="workshop-image"><span class="workshop-stamp">Kralen & kleur</span><img src="assets/workshop-sleutelhanger.svg" alt="Kleurrijke kralen-sleutelhanger" loading="lazy"></div>
+    <h3 class="workshop-name">Maak je eigen sleutelhanger</h3>
+    <p>Speel met vormen en kleuren. Je leert kralen combineren en maakt een hanger die niemand anders heeft.</p>
+    <span class="workshop-included">☕ Onbeperkt koffie, thee & taart</span><button class="underlined-link info-btn" data-kind="workshop" data-id="0">Ontdek de workshop ↗</button>
+   </article>
+   <article class="workshop-card">
+    <div class="workshop-image"><span class="workshop-stamp">Drukken & snijden</span><img src="assets/workshop-lino.svg" alt="Grafisch linodrukwerk met kleurrijke bloemen" loading="lazy"></div>
+    <h3 class="workshop-name">Linodruk voor beginners</h3>
+    <p>Ontwerp een kleine prent, snijd je motief en maak je eigen afdrukken. Lekker ouderwets met je handen.</p>
+    <span class="workshop-included">☕ Onbeperkt koffie, thee & taart</span><button class="underlined-link info-btn" data-kind="workshop" data-id="1">Ontdek de workshop ↗</button>
+   </article>
+   <article class="workshop-card">
+    <div class="workshop-image"><span class="workshop-stamp">Papier & plezier</span><img src="assets/workshop-kaartjes.svg" alt="Handgemaakte kleurrijke kaarten" loading="lazy"></div>
+    <h3 class="workshop-name">Kaartjes om te koesteren</h3>
+    <p>Knippen, tekenen, stempelen en combineren. Maak kaartjes waar iemand écht blij van wordt.</p>
+    <span class="workshop-included">☕ Onbeperkt koffie, thee & taart</span><button class="underlined-link info-btn" data-kind="workshop" data-id="2">Ontdek de workshop ↗</button>
+   </article>
+   <article class="workshop-card">
+    <div class="workshop-image"><span class="workshop-stamp">Kleur & vorm</span><img src="assets/workshop-kaarsenhouder.svg" alt="Speelse zelfgemaakte kaarsenhouders in blauw, groen en roze" loading="lazy"></div>
+    <h3 class="workshop-name">Je eigen kaarsenhouder</h3>
+    <p>Ontdek hoe je met vorm, kleur en handwerk een eigenzinnige kaarsenhouder maakt. Een klein kunstwerk voor op tafel.</p>
+    <span class="workshop-included">☕ Onbeperkt koffie, thee & taart</span><button class="underlined-link info-btn" data-kind="workshop" data-id="3">Ontdek de workshop ↗</button>
+   </article>
+   <article class="workshop-card">
+    <div class="workshop-image"><span class="workshop-stamp">Kleine kunstwerkjes</span><img src="assets/workshop-onderzetter.svg" alt="Speelse handgemaakte onderzetters in verschillende kleuren" loading="lazy"></div>
+    <h3 class="workshop-name">Maak je eigen onderzetter</h3>
+    <p>Kies je kleuren en patroon en maak een onderzetter met een persoonlijke toets. Leuk op de koffietafel én als cadeautje.</p>
+    <span class="workshop-included">☕ Onbeperkt koffie, thee & taart</span><button class="underlined-link info-btn" data-kind="workshop" data-id="4">Ontdek de workshop ↗</button>
+   </article>
+  </div>
+ </div>
+</section>
+<section class="cafe-band" aria-label="Koffie en taart">
+ <div class="cafe-picture" role="img" aria-label="Een heerlijke taart om samen van te genieten"></div>
+ <div class="cafe-copy"><span class="eyebrow">Ook belangrijk</span><h2>En dan nu...<br><em class="serif">de taart!</em></h2><p>Je hoeft niet altijd iets te maken om gezellig aan te schuiven. Bij het vrije atelier kan je koffie en taart kopen; bij onze workshops zijn koffie, thee en taart onbeperkt inbegrepen.</p></div>
+</section>
+<section class="section gifts" id="pakketjes">
+ <div class="container">
+  <div class="gift-top">
+    <div><span class="eyebrow">03 / Het clubhuis bij jou thuis</span><h2 class="d-title">Een doos vol <em class="serif">goesting.</em></h2><p>Openmaken, alles uitstallen en beginnen maar. Onze DIY-pakketjes bevatten precies wat je nodig hebt om zelf iets leuks te maken.</p></div>
+    <div class="gift-scene"><img src="assets/gift-pop.svg" alt="Illustratie van een cadeaudoos waar allerlei creatieve materialen uit springen" loading="lazy"></div>
+  </div>
+  <div class="gift-feature"><span aria-hidden="true">✳</span><strong>Alles in 1 pakket. Exact wat je nodig hebt.</strong><span aria-hidden="true">✳</span></div>
+  <div class="shop-grid">
+   <article class="product">
+    <div class="product-visual"><span class="product-flag">Perfect als cadeau</span><img src="assets/pakket-cards.svg" alt="Ingepakt DIY-kaartjespakket met strik en knutselmateriaal" loading="lazy"></div>
+    <div class="product-body"><span class="product-number">DIY 01 / Papier & plezier</span><h3>Het kaartjespakket</h3><p>Creatief papier, vrolijke details, een eenvoudige handleiding. Voor een paar kaartjes met een grote glimlach.</p><div class="product-buy-row"><span class="product-price">€ 24,95<small>Richtprijs</small></span><button type="button" class="add-cart" data-product="0">+ In winkelmandje</button></div><button class="underlined-link product-info-link info-btn" data-kind="kit" data-id="0">Wat zit erin? ↗</button></div>
+   </article>
+   <article class="product">
+    <div class="product-visual"><span class="product-flag">Klein maar fijn</span><img src="assets/pakket-key.svg" alt="Ingepakt DIY-sleutelhangerpakket met kralen rondom" loading="lazy"></div>
+    <div class="product-body"><span class="product-number">DIY 02 / Kralen & kleur</span><h3>Het kralenpakket</h3><p>Kleuren, kralen, bevestigingsmateriaal en uitleg. Voor een sleutelhanger die helemaal van jou is.</p><div class="product-buy-row"><span class="product-price">€ 19,95<small>Richtprijs</small></span><button type="button" class="add-cart" data-product="1">+ In winkelmandje</button></div><button class="underlined-link product-info-link info-btn" data-kind="kit" data-id="1">Wat zit erin? ↗</button></div>
+   </article>
+   <article class="product">
+    <div class="product-visual"><span class="product-flag">Voor kleine kunstenaars</span><img src="assets/pakket-lino.svg" alt="Ingepakt DIY-linopakket met drukmaterialen" loading="lazy"></div>
+    <div class="product-body"><span class="product-number">DIY 03 / Inkt & indruk</span><h3>Het linopakket</h3><p>Een eerste kennismaking met linodruk. Van schets tot eigen afdruk, met al het nodige materiaal bij elkaar.</p><div class="product-buy-row"><span class="product-price">€ 29,95<small>Richtprijs</small></span><button type="button" class="add-cart" data-product="2">+ In winkelmandje</button></div><button class="underlined-link product-info-link info-btn" data-kind="kit" data-id="2">Wat zit erin? ↗</button></div>
+   </article>
+  </div>
+  <p class="shop-last">Met liefde ingepakt. Met plezier weer uitgepakt. ♡</p>
+ </div>
+</section>
+<section class="section about" id="over">
+ <div class="container about-layout">
+  <div class="about-frame"><img id="momAboutPhoto" src="assets/workshop-kaartjes.svg" alt="Hilde geniet van een creatief moment"><div class="about-sticker">Welkom<br>bij<br>Hilde! ♡</div></div>
+  <div class="about-copy"><span class="eyebrow">Hoi, ik ben Hilde</span><h2 class="d-title">Meer maken.<br><em class="serif">Minder moeten.</em></h2><p>Al lang een hoofd vol ideeën en zin om anderen aan het knutselen te krijgen. Hilde's Clubhuis is een plek waar je iets mag uitproberen, onderweg mag lachen en met iets zelfgemaakts weer buitenstapt.</p><p>Beginners, fervente knutselaars en mensen die vooral voor de gezelligheid komen: hier is aan tafel plaats voor iedereen.</p><a href="#vrij-knutselen" class="btn btn-green">Schuif maar aan ↗</a></div>
+ </div>
+</section>
 </main>
-
-<div class="cart-overlay" id="cartOverlay" hidden></div>
+<footer class="footer">
+ <div class="container">
+  <div class="footer-main"><h2 class="footer-title">Tot aan de<br><em class="serif">knutseltafel.</em></h2><div class="footer-right"><p>Vrolijke ideeën, warme koffie, iets lekkers en ruimte voor jouw eigen creativiteit.</p><a class="btn btn-white" href="#boven">Terug naar boven ↑</a></div></div>
+  <div class="footer-bottom"><span>© Hilde's Clubhuis · Gemaakt met liefde, creativiteit en een gezonde dosis geknoei</span><span>Agenda en richtprijzen worden nog bevestigd. Bestellen en reserveren zijn nog niet actief.</span></div>
+ </div>
+</footer>
+<div class="dialog" id="infoDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" hidden>
+ <div class="dialog-inner"><button class="dialog-x" id="dialogClose" type="button" aria-label="Sluiten">×</button><span class="eyebrow" id="dialogType"></span><h2 id="dialogTitle"></h2><p id="dialogDescription"></p><div id="dialogDetails"></div><p class="dialog-note">Praktische data, prijzen en inschrijving volgen zodra alles vastligt.</p></div>
+</div>
+<div class="cart-backdrop" id="cartBackdrop" hidden></div>
 <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
- <div class="cart-top"><div><span class="eyebrow">Hilde's Clubhuis</span><h2 id="cartTitle">Je winkelmandje</h2></div><button type="button" class="cart-close" id="cartClose" aria-label="Sluit winkelmandje">×</button></div>
- <div class="cart-items" id="cartItems"></div>
- <div class="cart-footer"><div class="cart-total"><span>Totaal</span><span id="cartTotal">€ 0,00</span></div><p class="cart-caption">De prijzen zijn richtprijzen. Afrekenen is nog niet beschikbaar.</p><button type="button" class="pill light cart-continue" id="cartContinue">Verder winkelen ↗</button></div>
+ <div class="cart-head"><h2 id="cartTitle">Je winkelmandje</h2><button class="dialog-x" id="cartClose" type="button" aria-label="Sluit winkelmandje">×</button></div>
+ <div class="cart-list" id="cartItems"></div>
+ <div class="cart-foot"><div class="cart-foot-total"><span>Totaal</span><span id="cartTotal">€ 0,00</span></div><p>Dit is een kijkmandje. Afrekenen is nog niet actief; de getoonde prijzen zijn richtprijzen.</p><button type="button" class="btn btn-green" id="cartContinue">Verder rondkijken ↗</button></div>
 </aside>
-<footer><div class="container"><div class="footer-grid"><p class="footer-big">Tot aan de<br/><em>knutseltafel.</em> ✳</p><div class="footer-side"><p>Vrij knutselen, workshops en kleine creatieve avonturen voor thuis.</p><a class="pill coral" href="#boven">Terug naar boven ↑</a></div></div><div class="footer-bottom"><span>© Hilde's Clubhuis · Met liefde gemaakt</span><span>Beelden: Tanchen Studio en <a href="https://unsplash.com/photos/view-into-a-cluttered-art-studio-with-shelves-of-items-Wof6zzR4_Jk" target="_blank" rel="noopener noreferrer">Haberdoedas / Unsplash</a>. <a href="https://tanchenstudio.com" target="_blank" rel="noopener noreferrer">Bron</a></span></div></div></footer>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-content"><button class="modal-close" id="modalClose" aria-label="Sluiten">×</button><span class="eyebrow" id="modalEyebrow"></span><h2 id="modalTitle"></h2><p id="modalDescription"></p><div id="modalExtra"></div><div class="modal-note"></div></div></div>
 <script>
-(function(){
- var menuBtn=document.getElementById('menuToggle'),nav=document.getElementById('navlinks'),modal=document.getElementById('modal'),close=document.getElementById('modalClose');
- menuBtn.addEventListener('click',function(){var open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
- nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';});});
- var dates=[
- {title:'Een zondag vol geknutsel',date:'Zondag 22 november 2026',time:'14:00–17:00'},
- {title:'Knutselen & koffie',date:'Zondag 29 november 2026',time:'14:00–17:00'},
- {title:'Een middag voor jezelf',date:'Zondag 6 december 2026',time:'14:00–17:00'}];
- var workshops=[
- {title:'Maak je eigen sleutelhanger',description:'Leer hoe je kralen selecteert en combineert, een mooi ritme opbouwt en je sleutelhanger netjes afwerkt.',items:['Alle benodigde materialen tijdens de workshop','Begeleiding, ook voor absolute beginners','Je eigen creatie mee naar huis','Onbeperkt koffie, thee én taart']},
- {title:'Kaartjes om te koesteren',description:'Leer hoe je met papier, kleur, lagen en compositie persoonlijke wenskaarten ontwerpt.',items:['Papier en decoratiemateriaal om te experimenteren','Creatieve technieken en stap-voor-stap tips','Je zelfgemaakte kaartjes mee naar huis','Onbeperkt koffie, thee én taart']},
- {title:'Linodruk voor beginners',description:'Ontdek de basis van linodruk: een motief ontwerpen, veilig snijden en afdrukken.',items:['Uitleg over het materiaal en veilig werken','Begeleiding bij schets, snijwerk en afdruk','Je eigen prints om mee te nemen','Onbeperkt koffie, thee én taart']}];
- var kits=[
- {title:'Het kaartjespakket',description:'Een toegankelijk pakket voor je eerste zelfgemaakte kaartjes.',items:['Kaarten en creatief papier','Decoratieve elementen en materialen','Een eenvoudige stap-voor-stap handleiding','Inspiratie om meteen te beginnen']},
- {title:'Het kralenpakket',description:'Alles rond een speelse, zelfgemaakte kralensleutelhanger.',items:['Een selectie kralen en kleuren','Passend rijg- en bevestigingsmateriaal','Sleutelring','Een eenvoudige stap-voor-stap handleiding']},
- {title:'Het linopakket',description:'Een starterspakket voor een eerste kennismaking met linodruk.',items:['Linomateriaal en een basisset gereedschap','Drukmateriaal en papier','Handleiding met veiligheidsinstructies','Een klein project als eerste oefening']}];
- function list(items){return '<ul>'+items.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul>';}
- function openModal(kind,id){var item,eyebrow='',description='',extra='';
- if(kind==='date'){item=dates[id];eyebrow='Vrij atelier · Vrij atelier';description=item.date+' · '+item.time+'.';extra='<p>Neem je eigen knutselmateriaal mee of koop materiaal ter plaatse. Koffie en taart zijn afzonderlijk verkrijgbaar.</p><p>Meer informatie over aanmelden volgt binnenkort.</p>';}
- if(kind==='workshop'){item=workshops[id];eyebrow='Workshop';description=item.description;extra='<p><strong>Wat mag je verwachten?</strong></p>'+list(item.items)+'<p>Data en tarieven volgen binnenkort.</p>';}
- if(kind==='kit'){item=kits[id];eyebrow='DIY-pakket';description=item.description;extra='<p><strong>Dit zit in het pakket:</strong></p>'+list(item.items)+'<p>Met alles om zelf aan de slag te gaan.</p>';}
- if(!item)return;
- document.getElementById('modalEyebrow').textContent=eyebrow;document.getElementById('modalTitle').textContent=item.title;document.getElementById('modalDescription').textContent=description;document.getElementById('modalExtra').innerHTML=extra;modal.hidden=false;close.focus();document.body.style.overflow='hidden';
- }
- function closeModal(){modal.hidden=true;document.body.style.overflow='';}
- document.querySelectorAll('.detail-btn').forEach(function(b){b.addEventListener('click',function(){openModal(b.dataset.kind,Number(b.dataset.id));});});
- close.addEventListener('click',closeModal);modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
- document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeModal();});
-
- var shopProducts=[
-  {title:'Het kaartjespakket',price:24.95,img:'assets/pakket-cards.svg'},
-  {title:'Het sleutelhangerpakket',price:19.95,img:'assets/pakket-key.svg'},
-  {title:'Het linopakket',price:29.95,img:'assets/pakket-lino.svg'}
+(()=>{
+ const menu=document.getElementById('menuToggle'),nav=document.getElementById('navLinks');
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';}));
+ const workshopData=[
+  ['Maak je eigen sleutelhanger','Combineer kleuren, rijg je kralen en werk je eigen sleutel- of tassenhanger af.',['Alle benodigde kralen en bevestigingsmaterialen','Stap-voor-stap begeleiding, ook voor beginners','Je zelfgemaakte hanger mee naar huis','Onbeperkt koffie, thee en taart']],
+  ['Linodruk voor beginners','Leer een eigen motief bedenken, veilig snijden en afdrukken.',['Basismateriaal en veilige werkuitleg','Begeleiding van ontwerp tot print','Je eigen afdrukken om mee te nemen','Onbeperkt koffie, thee en taart']],
+  ['Kaartjes om te koesteren','Speel met papier, kleur en compositie en ontwerp kaartjes met karakter.',['Papier en materialen om mee te experimenteren','Tips voor tekenen, knippen, drukken en versieren','Je zelfgemaakte kaartjes mee naar huis','Onbeperkt koffie, thee en taart']],
+  ['Je eigen kaarsenhouder','Maak een unieke kaarsenhouder in je favoriete vormen en kleuren.',['Materiaal en creatieve begeleiding','Hulp bij vormgeving en afwerking','Je eigen kaarsenhouder mee naar huis zodra hij klaar is','Onbeperkt koffie, thee en taart']],
+  ['Maak je eigen onderzetter','Ontwerp een speelse onderzetter: met kleur, patronen en een zelfgekozen techniek.',['Benodigd materiaal voor je onderzetter','Uitleg en creatieve begeleiding','Je zelfgemaakte onderzetter mee naar huis','Onbeperkt koffie, thee en taart']]
  ];
- var cart={},cartPanel=document.getElementById('cartPanel'),cartOverlay=document.getElementById('cartOverlay'),cartPreviousFocus=null;
- function formatMoney(v){return '€ '+v.toLocaleString('nl-BE',{minimumFractionDigits:2,maximumFractionDigits:2});}
- function cartCount(){return Object.values(cart).reduce(function(sum,n){return sum+n;},0);}
- function renderCart(){
-  document.getElementById('cartBadge').textContent=cartCount();
-  var items=document.getElementById('cartItems');items.textContent='';
-  var total=0;
-  Object.keys(cart).filter(function(k){return cart[k]>0;}).forEach(function(k){
-   var p=shopProducts[Number(k)],qty=cart[k];total+=p.price*qty;
-   var item=document.createElement('div');item.className='cart-item';
-   item.innerHTML='<img src="'+p.img+'" alt="" /><div><h3>'+p.title+'</h3><p>'+formatMoney(p.price)+' per stuk</p><div class="qty-controls"><button type="button" data-qty="'+k+'" data-delta="-1" aria-label="Verwijder één '+p.title+'">−</button><strong>'+qty+'</strong><button type="button" data-qty="'+k+'" data-delta="1" aria-label="Voeg één '+p.title+' toe">+</button></div></div>';
-   items.appendChild(item);
-  });
-  if(!cartCount()){var empty=document.createElement('p');empty.className='cart-empty';empty.textContent='Nog niets in je winkelmandje. Tijd om iets leuks te maken!';items.appendChild(empty);}
-  document.getElementById('cartTotal').textContent=formatMoney(total);
+ const kitData=[
+  ['Het kaartjespakket','Je eerste zelfgemaakte kaartjes, van idee tot envelop.',['Kaarten en mooi papier','Creatief decoratiemateriaal','Een eenvoudige handleiding met inspiratie']],
+  ['Het kralenpakket','Een bijzondere sleutelhanger die je helemaal zelf maakt.',['Een kleurrijke kralenselectie','Rijg- en bevestigingsmateriaal','Sleutelring en duidelijke handleiding']],
+  ['Het linopakket','Probeer linodruk uit met je eigen kleine ontwerp.',['Startmateriaal voor linodruk','Passend veilig basisgereedschap','Papier en een handleiding met veiligheidsuitleg']]
+ ];
+ const dates=[
+  ['Zondag aan de knutseltafel','22 november 2026 · 14:00 – 17:00'],
+  ['Knutselen & koffie','29 november 2026 · 14:00 – 17:00'],
+  ['Even tijd voor jezelf','6 december 2026 · 14:00 – 17:00']
+ ];
+ const dialog=document.getElementById('infoDialog'),dialogClose=document.getElementById('dialogClose');let previousFocus=null;
+ function showInfo(kind,id){
+  let item,title,desc,details=[],kindText;
+  if(kind==='workshop'){item=workshopData[id];kindText='Creatieve workshop';[title,desc,details]=item;}
+  else if(kind==='kit'){item=kitData[id];kindText='DIY-pakket';[title,desc,details]=item;}
+  else{item=dates[id];kindText='Vrij knutselen';title=item[0];desc=item[1]+' · Voorgestelde datum, nog te bevestigen.';details=['Breng gerust je eigen knutselmaterialen mee','Extra materialen kan je ter plaatse kopen','Koffie en taart zijn afzonderlijk verkrijgbaar'];}
+  if(!item)return;
+  previousFocus=document.activeElement;
+  document.getElementById('dialogType').textContent=kindText;
+  document.getElementById('dialogTitle').textContent=title;
+  document.getElementById('dialogDescription').textContent=desc;
+  const box=document.getElementById('dialogDetails');box.textContent='';
+  const list=document.createElement('ul');details.forEach(t=>{const li=document.createElement('li');li.textContent=t;list.appendChild(li);});box.appendChild(list);
+  dialog.hidden=false;document.body.style.overflow='hidden';dialogClose.focus();
  }
- function openCart(){cartPreviousFocus=document.activeElement;cartOverlay.hidden=false;cartPanel.hidden=false;document.body.style.overflow='hidden';document.getElementById('cartClose').focus();}
- function closeCart(){cartOverlay.hidden=true;cartPanel.hidden=true;document.body.style.overflow='';if(cartPreviousFocus&&cartPreviousFocus.focus)cartPreviousFocus.focus();}
- document.querySelectorAll('.shop-buy').forEach(function(button){button.addEventListener('click',function(){var k=button.dataset.product;cart[k]=(cart[k]||0)+1;renderCart();openCart();});});
+ function hideInfo(){dialog.hidden=true;document.body.style.overflow='';if(previousFocus&&previousFocus.focus)previousFocus.focus();}
+ document.querySelectorAll('.info-btn').forEach(b=>b.addEventListener('click',()=>showInfo(b.dataset.kind,Number(b.dataset.id))));
+ dialogClose.addEventListener('click',hideInfo);dialog.addEventListener('click',e=>{if(e.target===dialog)hideInfo();});
+ const products=[
+  {name:'Het kaartjespakket',price:24.95,image:'assets/pakket-cards.svg'},
+  {name:'Het kralenpakket',price:19.95,image:'assets/pakket-key.svg'},
+  {name:'Het linopakket',price:29.95,image:'assets/pakket-lino.svg'}
+ ],cart={},cartPanel=document.getElementById('cartPanel'),cartBackdrop=document.getElementById('cartBackdrop');let previousCartFocus;
+ const euros=n=>'€ '+n.toLocaleString('nl-BE',{minimumFractionDigits:2,maximumFractionDigits:2});
+ function renderCart(){
+  const count=Object.values(cart).reduce((s,n)=>s+n,0);
+  document.getElementById('cartBadge').textContent=String(count);
+  const list=document.getElementById('cartItems');list.textContent='';
+  let total=0;
+  Object.keys(cart).filter(k=>cart[k]>0).forEach(k=>{
+   const p=products[Number(k)],qty=cart[k];total+=p.price*qty;
+   const row=document.createElement('div');row.className='cart-item';
+   const img=document.createElement('img');img.src=p.image;img.alt='';
+   const content=document.createElement('div'),title=document.createElement('h3'),price=document.createElement('p');title.textContent=p.name;price.textContent=euros(p.price)+' per stuk';
+   const controls=document.createElement('div');controls.className='quantity';
+   const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Een '+p.name+' verwijderen');
+   const plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','Een '+p.name+' toevoegen');
+   const n=document.createElement('strong');n.textContent=String(qty);
+   minus.addEventListener('click',()=>{cart[k]=Math.max(0,cart[k]-1);renderCart();});
+   plus.addEventListener('click',()=>{cart[k]++;renderCart();});
+   controls.append(minus,n,plus);content.append(title,price,controls);row.append(img,content);list.appendChild(row);
+  });
+  if(!count){const p=document.createElement('p');p.className='empty-cart';p.textContent='Nog niets in je mandje. Tijd om iets creatiefs uit te kiezen!';list.appendChild(p);}
+  document.getElementById('cartTotal').textContent=euros(total);
+ }
+ function openCart(){previousCartFocus=document.activeElement;cartBackdrop.hidden=false;cartPanel.hidden=false;document.body.style.overflow='hidden';document.getElementById('cartClose').focus();}
+ function closeCart(){cartBackdrop.hidden=true;cartPanel.hidden=true;document.body.style.overflow='';if(previousCartFocus&&previousCartFocus.focus)previousCartFocus.focus();}
  document.getElementById('cartOpen').addEventListener('click',openCart);
  document.getElementById('cartClose').addEventListener('click',closeCart);
  document.getElementById('cartContinue').addEventListener('click',closeCart);
- cartOverlay.addEventListener('click',closeCart);
- document.getElementById('cartItems').addEventListener('click',function(ev){var button=ev.target.closest('button[data-qty]');if(!button)return;var k=button.dataset.qty;cart[k]=Math.max(0,(cart[k]||0)+Number(button.dataset.delta));renderCart();});
- document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&!cartPanel.hidden)closeCart();});
+ cartBackdrop.addEventListener('click',closeCart);
+ document.querySelectorAll('.add-cart').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.product;cart[id]=(cart[id]||0)+1;renderCart();openCart();}));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!dialog.hidden)hideInfo();if(!cartPanel.hidden)closeCart();}});
  renderCart();
-
 })();
 </script>
-</body></html>
+</body>
+</html>
