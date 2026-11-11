@@ -150,6 +150,37 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 .hero-art .float-card{bottom:7%;left:1%;font-size:29px;background:var(--red);transform:rotate(-5deg)}
 @media(max-width:760px){.hero-art .studio-photo{width:84%;height:74%;left:8%;top:10%}.hero-art .float-card{left:3%;bottom:8%;font-size:23px}.hero-art .float-note{width:96px;height:96px;font-size:14px;right:1%}}
 
+
+/* DIY webshop: keep the editorial style but make products unmistakably shoppable */
+.shop{background:#f5f0e3}
+.shop-intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;padding-bottom:45px}
+.shop-intro h2{font-size:clamp(52px,5vw,75px);line-height:1.02;margin:12px 0 0}
+.shop-intro-copy{border-left:1px solid var(--ink);padding-left:38px}
+.shop-kicker{display:inline-block;background:var(--yellow);padding:8px 14px;border:1px solid var(--ink);border-radius:99px;text-transform:uppercase;font-size:10px;letter-spacing:.09em;font-weight:800}
+.shop-intro-copy h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.045em;font-size:clamp(27px,3vw,43px);line-height:1.13;margin:17px 0 13px}
+.shop-intro-copy p{font-size:15px;line-height:1.65;max-width:490px;margin:0 0 16px}
+.shop-promises{display:flex;flex-wrap:wrap;gap:7px 16px;font-size:11px;font-weight:800}
+.shop-toolbar{border-top:1.5px solid var(--ink);padding:21px 0;display:flex;align-items:center;justify-content:space-between}
+.shop-count{font-size:12px;color:#57544d;font-weight:700}
+.shop-grid{gap:20px}
+.shop-product{background:var(--cream);border:1px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:4px 5px 0 rgba(38,37,31,.07)}
+.shop-product-image{height:340px;background:#e7decf;position:relative;border-bottom:1px solid var(--hair)}
+.shop-product-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.shop-product:hover .shop-product-image img{transform:scale(1.045)}
+.shop-tag{position:absolute;z-index:2;top:16px;left:16px;background:var(--cream);border:1px solid var(--ink);border-radius:99px;padding:9px 12px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.shop-product-info{padding:24px 22px;display:flex;flex-direction:column;flex:1}
+.product-small{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#6d675c}
+.shop-product h3{font-family:"Fraunces",Georgia,serif;letter-spacing:-.04em;font-size:29px;line-height:1.1;margin:10px 0 10px}
+.shop-product p{font-size:14px;line-height:1.6;color:#555149;margin:0 0 22px;flex:1}
+.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:11px;border-top:1px solid var(--hair);padding-top:18px}
+.product-price{font-size:22px;line-height:1.1;display:block;font-weight:800;white-space:nowrap}
+.product-price-note{font-size:10px;color:#675f54}
+.shop-buy{border:1px solid var(--ink);border-radius:99px;background:var(--ink);color:#fff;padding:12px 15px;font-size:12px;font-weight:800;white-space:nowrap;transition:background .2s,transform .2s}
+.shop-buy:hover{background:var(--red);color:var(--ink);transform:translateY(-2px)}
+.shop-details{border:none;border-bottom:1px solid var(--ink);background:transparent;font-size:12px;font-weight:800;margin-top:20px;align-self:flex-start;padding:0 0 4px}
+.shop-endnote{margin-top:36px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:22px;letter-spacing:-.02em}
+@media(max-width:1050px){.shop-intro{gap:25px}.shop-intro-copy{padding-left:25px}.shop-product-image{height:280px}.shop-buy{padding:10px;font-size:11px}.product-price{font-size:19px}}
+@media(max-width:760px){.shop-intro{grid-template-columns:1fr;gap:22px}.shop-intro h2{font-size:57px}.shop-intro-copy{border-left:none;border-top:1px solid var(--ink);padding:25px 0 0}.shop-grid{gap:20px}.shop-product-image{height:340px}.shop-product-info{padding:24px}.shop-endnote{font-size:19px}}
 </style>
 </head>
 <body>
@@ -187,12 +218,34 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 </div></section>
 <div class="mid-banner"><div class="container"><p>✳ &nbsp; Je hoeft niet creatief te zijn. Je moet gewoon beginnen. &nbsp; ✳</p></div></div>
 <section class="section shop" id="shop"><div class="container">
-<div class="section-heading"><div><span class="eyebrow">03 / Het clubhuis bij jou thuis</span><h2 class="display">Een doosje vol<br/><em>goesting.</em></h2></div><p>Geen idee waar te beginnen? Onze knutselpakketjes bundelen wat je nodig hebt voor één fijn project. Open de doos, zet koffie en ga ervoor.</p></div>
-<div class="shop-grid">
-<article class="item-card"><div class="product-visual kit-card"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">✉</span><b>kaartjes<br/>maken</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 01</div><h3>Het kaartjespakket</h3><p>Een fijne eerste stap in de wereld van zelfgemaakte kaartjes. Papier, leuke details en inspiratie bij elkaar.</p><button class="card-link detail-btn" data-kind="kit" data-id="0">Bekijk het pakket ↗</button></div></article>
-<article class="item-card"><div class="product-visual kit-key"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">❋</span><b>sleutel<br/>hanger</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 02</div><h3>Het kralenpakket</h3><p>Speel met kleuren, maak je eigen combinatie en knutsel een sleutelhanger die helemaal van jou is.</p><button class="card-link detail-btn" data-kind="kit" data-id="1">Bekijk het pakket ↗</button></div></article>
-<article class="item-card"><div class="product-visual kit-lino"><span class="flag">Voor thuis</span><div class="kit-graphic"><span class="graphic-symbol">✳</span><b>lino<br/>druk</b></div></div><div class="card-details"><div class="eyebrow">DIY-pakket 03</div><h3>Het linopakket</h3><p>Ontwerp, snijd en druk je eigen kleine kunstwerk. Een creatief moment, van eerste schets tot afdruk.</p><button class="card-link detail-btn" data-kind="kit" data-id="2">Bekijk het pakket ↗</button></div></article>
-</div><p class="shop-note">Voorlopige productvoorstellen. De precieze inhoud, veiligheidsinstructies, prijzen en bestelmogelijkheden worden uitgewerkt voor de lancering.</p>
+<div class="shop-intro">
+ <div><span class="eyebrow">03 / Het clubhuis bij jou thuis</span><h2 class="display">De mini<br/><em>knutselwinkel.</em></h2></div>
+ <div class="shop-intro-copy"><span class="shop-kicker">✳ DIY-pakketjes om blij van te worden</span>
+  <h3>Alles in 1 pakket.<br/>Exact wat je nodig hebt.</h3>
+  <p>Materialen, creatieve goesting én een duidelijke handleiding: alles zit samen in één mooi ingepakte doos. Je hoeft alleen nog een plekje aan tafel te zoeken.</p>
+  <div class="shop-promises"><span>✓ Alle materialen</span><span>✓ Stap-voor-stap uitleg</span><span>✓ Leuk om cadeau te doen</span></div>
+ </div>
+</div>
+<div class="shop-toolbar"><span class="eyebrow">Ontdek onze DIY-pakketten</span><span class="shop-count">3 producten</span></div>
+<div class="shop-grid"><article class="shop-product">
+ <div class="shop-product-image"><span class="shop-tag">Creatief cadeau</span><img src="assets/pakket-cards.svg" alt="Cadeaudoos met strik, wenskaarten en knutselmateriaal" loading="lazy" /></div>
+ <div class="shop-product-info"><div class="product-small">01 / Papier & plezier</div><h3>Het kaartjespakket</h3><p>Maak je eigen bijzondere kaartjes met mooi papier, vrolijke details en een handige handleiding.</p>
+ <div class="product-bottom"><div><strong class="product-price">€ 24,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="0">+ In winkelmandje</button></div>
+ <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="0">Wat zit er in het pakket? ↗</button></div>
+</article>
+<article class="shop-product">
+ <div class="shop-product-image"><span class="shop-tag">Leuk voor beginners</span><img src="assets/pakket-key.svg" alt="Cadeaudoos met strik, kralen en sleutelhangeronderdelen" loading="lazy" /></div>
+ <div class="shop-product-info"><div class="product-small">02 / Kralen & kleur</div><h3>Het sleutelhangerpakket</h3><p>Rijg, combineer en maak je eigen unieke sleutelhanger met kralen in leuke kleuren.</p>
+ <div class="product-bottom"><div><strong class="product-price">€ 19,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="1">+ In winkelmandje</button></div>
+ <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="1">Wat zit er in het pakket? ↗</button></div>
+</article>
+<article class="shop-product">
+ <div class="shop-product-image"><span class="shop-tag">Inkt & indruk</span><img src="assets/pakket-lino.svg" alt="Cadeaudoos met strik, linosnijmaterialen en prints" loading="lazy" /></div>
+ <div class="shop-product-info"><div class="product-small">03 / Linodruk</div><h3>Het linopakket</h3><p>Van eerste schets naar je eigen print. Ontdek linodruk met een complete creatieve startersset.</p>
+ <div class="product-bottom"><div><strong class="product-price">€ 29,95</strong><span class="product-price-note">Richtprijs</span></div><button type="button" class="shop-buy" data-product="2">+ In winkelmandje</button></div>
+ <button type="button" class="shop-details detail-btn" data-kind="kit" data-id="2">Wat zit er in het pakket? ↗</button></div>
+</article></div>
+<div class="shop-endnote">✳ &nbsp; Inpakken doen we met liefde. Uitpakken mag met enthousiasme.</div>
 </div></section>
 <section class="section about" id="over"><div class="container about-grid">
 <div class="about-art"><div class="poster">meer<br/>maken.<br/>minder<br/>moeten.</div><div class="stamp">MET LIEFDE<br/>EN VEEL<br/>GEPRUTS ✳</div></div>
