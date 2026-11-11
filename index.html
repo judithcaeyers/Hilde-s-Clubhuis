@@ -203,6 +203,9 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
 .cart-caption{font-size:12px;line-height:1.55;color:#5d5952;margin:0 0 17px}
 .cart-continue{width:100%}
 @media(max-width:760px){.nav-cart{align-self:flex-start}}
+
+@media(max-width:1120px) and (min-width:931px){.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .pill{padding:10px 12px;min-height:42px}}
+@media(max-width:930px) and (min-width:761px){.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:var(--paper);padding:24px 27px;border-bottom:1px solid var(--ink);flex-direction:column;align-items:stretch;gap:20px}.navlinks.open{display:flex}.navlinks .pill,.navlinks .nav-cart{align-self:flex-start}}
 </style>
 </head>
 <body>
@@ -281,7 +284,7 @@ footer{background:var(--ink);color:var(--paper);padding:65px 0 28px}
  <div class="cart-items" id="cartItems"></div>
  <div class="cart-footer"><div class="cart-total"><span>Totaal</span><span id="cartTotal">€ 0,00</span></div><p class="cart-caption">De prijzen zijn richtprijzen. Afrekenen is nog niet beschikbaar.</p><button type="button" class="pill light cart-continue" id="cartContinue">Verder winkelen ↗</button></div>
 </aside>
-<footer><div class="container"><div class="footer-grid"><p class="footer-big">Tot aan de<br/><em>knutseltafel.</em> ✳</p><div class="footer-side"><p>Vrij knutselen, workshops en kleine creatieve avonturen voor thuis.</p><a class="pill coral" href="#boven">Terug naar boven ↑</a></div></div><div class="footer-bottom"><span>© Hilde's Clubhuis · Met liefde gemaakt</span><span>Beelden: Tanchen Studio en Haberdoedas / Unsplash. <a href="https://tanchenstudio.com" target="_blank" rel="noopener noreferrer">Bron</a></span></div></div></footer>
+<footer><div class="container"><div class="footer-grid"><p class="footer-big">Tot aan de<br/><em>knutseltafel.</em> ✳</p><div class="footer-side"><p>Vrij knutselen, workshops en kleine creatieve avonturen voor thuis.</p><a class="pill coral" href="#boven">Terug naar boven ↑</a></div></div><div class="footer-bottom"><span>© Hilde's Clubhuis · Met liefde gemaakt</span><span>Beelden: Tanchen Studio en <a href="https://unsplash.com/photos/view-into-a-cluttered-art-studio-with-shelves-of-items-Wof6zzR4_Jk" target="_blank" rel="noopener noreferrer">Haberdoedas / Unsplash</a>. <a href="https://tanchenstudio.com" target="_blank" rel="noopener noreferrer">Bron</a></span></div></div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-content"><button class="modal-close" id="modalClose" aria-label="Sluiten">×</button><span class="eyebrow" id="modalEyebrow"></span><h2 id="modalTitle"></h2><p id="modalDescription"></p><div id="modalExtra"></div><div class="modal-note"></div></div></div>
 <script>
 (function(){
